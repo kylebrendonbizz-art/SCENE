@@ -1,0 +1,21 @@
+/* overnight-2206: Agent 3 UI/UX polish from 22:06 playtest. Kill: html.ov2206-off or SCENE_OV2206_OFF=true */
+html.ov2206:not(.ov2206-off) #u3chips{
+  padding-inline: 12px 28px; /* end peek so last chip isn't clipped */
+  scroll-padding-inline: 12px 28px;
+  -webkit-overflow-scrolling: touch;
+}
+html.ov2206:not(.ov2206-off) #u3chips .u3chip:last-child{
+  margin-inline-end: 4px;
+}
+/* Story Rewind: bigger Skip, keep tap zones from covering Skip */
+html.ov2206:not(.ov2206-off) .mo-rw-top{z-index:5;position:relative}
+html.ov2206:not(.ov2206-off) .mo-rw-skip{
+  min-height:44px;min-width:72px;padding:12px 16px;font:800 13px/1 system-ui,sans-serif;
+  background:rgba(255,255,255,.22);
+}
+html.ov2206:not(.ov2206-off) .mo-rw-tap.l{width:28%}
+html.ov2206:not(.ov2206-off) .mo-rw-tap.r{width:72%}
+/* Outcome banner: don't eat the first post forever — nudge below HUD */
+html.ov2206:not(.ov2206-off) .mo-banner{
+  max-width:calc(100% - 24px);
+}

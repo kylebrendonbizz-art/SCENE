@@ -1,0 +1,23 @@
+/* uiux24 · scoped under html.u24 (set by uiux24.js) */
+/* 2 · leftover pills: same glass + gold edge + gold-pink type as uiux23's HUD/milestone pills; box metrics kept */
+html.u24 .u24pill{display:inline-flex;align-items:center;gap:6px;border:0!important;background:linear-gradient(170deg,rgba(40,32,58,.86),rgba(18,15,28,.92))!important;box-shadow:inset 0 1px 0 rgba(255,255,255,.14),inset 0 0 0 1px rgba(243,211,154,.4),0 4px 14px rgba(0,0,0,.28);color:#ffe7f4!important}
+html.u24 .u24pill .u23i{width:13px;height:13px}
+html.u24 .skillchip{border:0!important;background:linear-gradient(170deg,rgba(40,32,58,.86),rgba(18,15,28,.92));box-shadow:inset 0 0 0 1px rgba(243,211,154,.4);color:#f3d39a!important;font-weight:800;letter-spacing:.04em}
+html.u24 .rewardpreview,html.u24 .scene-milereward157{color:#f3d39a!important}
+html.u24 .mo-tierchip{box-shadow:inset 0 0 0 1px rgba(243,211,154,.35)}
+/* 3 · @reply thread */
+html.u24 .commentwrap.u24reply{position:relative;margin-left:30px;padding-left:12px}
+html.u24 .commentwrap.u24reply::before{content:"";position:absolute;left:-14px;top:-6px;width:18px;height:34px;border-left:1.5px solid rgba(243,211,154,.45);border-bottom:1.5px solid rgba(243,211,154,.45);border-bottom-left-radius:12px;pointer-events:none}
+html.u24 .commentwrap.nested{border-left-color:rgba(243,211,154,.3)!important}
+html.u24 .u24at{display:inline-block;margin-right:5px;padding:1px 7px;border-radius:999px;font-size:.88em;font-weight:700;color:#f3d39a;background:rgba(243,211,154,.1);box-shadow:inset 0 0 0 1px rgba(243,211,154,.3)}
+/* 4 · city card */
+.u24city{position:fixed;left:50%;top:calc(env(safe-area-inset-top,0px) + 76px);z-index:2147481000;width:min(330px,88vw);transform:translate(-50%,-14px) scale(.97);opacity:0;transition:transform .45s cubic-bezier(.2,1.3,.3,1),opacity .3s ease;padding:14px 18px 15px;border-radius:22px;text-align:center;cursor:pointer;
+ background:linear-gradient(170deg,rgba(40,32,58,.94),rgba(18,15,28,.97));box-shadow:0 22px 60px rgba(0,0,0,.55),inset 0 1px 0 rgba(255,255,255,.12),inset 0 0 0 1px rgba(243,211,154,.32);-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",system-ui,sans-serif}
+.u24city.on{transform:translate(-50%,0) scale(1);opacity:1}
+.u24city small{display:block;font-size:10.5px;font-weight:700;letter-spacing:.3em;color:#f3d39a}
+.u24city b{display:block;margin:6px 0 4px;font-family:"New York","Iowan Old Style",Georgia,serif;font-size:27px;line-height:1.1;font-weight:700;background:linear-gradient(100deg,#fff3e2,#f3d39a 55%,#ff9ec7);-webkit-background-clip:text;background-clip:text;color:transparent}
+.u24city span{display:block;font-size:12px;letter-spacing:.08em;color:rgba(255,231,244,.6)}
+/* 5 · DM mood line */
+html.u24 .u24mood{display:block;margin-top:1px;font-size:11px;font-weight:600;color:#f3d39a;opacity:.9;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+/* uiux21 follow-up: the comment-sheet composer (Post your reply) also sat under the AppDeploy badge */
+html.u24.u21badge #modal .commentcomposer{padding-bottom:calc(var(--u21-clear,64px) + 4px)!important}

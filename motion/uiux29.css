@@ -1,0 +1,40 @@
+/* uiux29 · scoped html.u29 (gate) / html.u29.u29career (calm Career) */
+/* ---- Your move gate ---- */
+html.u29 .u29-hide{display:none!important}
+html.u29 .u29obj{display:block;color:rgba(255,243,226,.9)!important;font-weight:600}
+html.u29 .u29ctx{margin:6px 0 0;font-size:12px;line-height:1.35;color:rgba(255,243,226,.62);font-style:italic}
+html.u29 .u29ctx em{font-style:normal;font-size:10px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:#f3d39a;margin-right:4px}
+html.u29 .u29x{align-self:center;margin-left:auto;min-height:32px;padding:0 12px;border:0;border-radius:999px;background:rgba(255,255,255,.06);color:rgba(255,243,226,.7);font:700 12px/1 system-ui;cursor:pointer}
+html.u29 .u10-hero .u29x{position:absolute;right:12px;top:10px;z-index:2}
+html.u29 .scene-nextmove148{position:relative}
+/* ---- calm Career ---- */
+/* Logic's cm247 map block -> a slim, quieter strip (pins + "Tap a district" still work) */
+html.u29career .cm247{margin:6px 16px 0!important}
+html.u29career .cm247-map{height:96px!important;border-color:rgba(255,255,255,.06)!important;filter:saturate(.55) brightness(.82);border-radius:14px!important}
+html.u29career .cm247-map .cm247-pin{padding:4px 9px!important;font-size:10.5px!important}
+html.u29career .cm247-here{font-size:11px;opacity:.6;margin-top:4px}
+/* sections breathe instead of stacking boxes */
+html.u29career .u10-body{padding-top:4px}
+html.u29career .u10-sec{margin-top:26px!important}
+html.u29career .u10-sec:first-child{margin-top:14px!important}
+html.u29career .u10-sechead{margin-bottom:10px!important;opacity:.9}
+html.u29career .u10-sechead h2{font-size:19px!important}
+/* one quiet glass level: no borders, no glows, soft fill */
+html.u29career .u10-glass,html.u29career .u18track,html.u29career .u10-chapter,html.u29career .u10-timeline,html.u29career .u10-rail>*{border:0!important;box-shadow:none!important;background:rgba(255,255,255,.035)!important;border-radius:16px!important}
+html.u29career .u10-timeline{background:none!important;padding-left:2px!important}
+html.u29career .u10-timeline>li{border:0!important;box-shadow:none!important;background:none!important}
+html.u29career .u10-rail{gap:10px!important}
+html.u29career .u10-rail .u10-chip{background:rgba(255,255,255,.05)!important;border:0!important}
+/* the one accent on the page: the hero (when it has a real move) */
+html.u29career .u10-hero{border:0!important;box-shadow:inset 0 0 0 1px rgba(243,211,154,.28)!important;background:linear-gradient(170deg,rgba(46,30,52,.7),rgba(20,14,28,.75))!important}
+html.u29career .u10-hero .u10-glow{opacity:.35!important}
+html.u29career .u18track{margin-bottom:12px!important}
+/* lx244 what's-next sits as a quiet line under the header (uiux26 card -> lighter) */
+html.u29career .lx244{background:none!important;box-shadow:none!important;padding:2px 2px 0!important;margin:10px 18px 0!important}
+html.u29career .u26jetchip{margin-top:10px}
+/* real Your move strip: copy gets the full width, actions sit on one row underneath */
+html.u29 .scene-nextmove148:is([data-u29="real"],[data-u29="logic"]){flex-wrap:wrap;row-gap:10px}
+html.u29 .scene-nextmove148:is([data-u29="real"],[data-u29="logic"]) .scene-movecopy148{flex:1 1 calc(100% - 64px);min-width:0}
+html.u29 .scene-nextmove148:is([data-u29="real"],[data-u29="logic"]) .scene-movego148{margin-left:56px}
+html.u29 .scene-nextmove148:is([data-u29="real"],[data-u29="logic"]) .u29x{margin-left:8px}
+html.u29 .scene-nextmove148:is([data-u29="real"],[data-u29="logic"])>:not(.scene-moveicon148):not(.scene-movecopy148):not(.scene-movego148):not(.u29x){flex-basis:100%}

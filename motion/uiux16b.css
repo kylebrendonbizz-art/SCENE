@@ -1,0 +1,17 @@
+/* uiux16b · scoped under html.u16b (kill switch SCENE_UIUX16B_OFF). Works with or without uiux16 (html.u16). */
+/* 1. DM Send: same glossy gold→pink fill + dark ink as the other primary buttons. Colours/shadow only: size, padding and tap target untouched. */
+html.u16b #dmsend{
+ color:#2a1a10!important;border-color:transparent!important;font-weight:700;
+ background-color:transparent!important;
+ background-image:linear-gradient(110deg,transparent 38%,rgba(255,255,255,.6) 50%,transparent 62%),linear-gradient(135deg,#f3d39a,#ffd9e8 58%,#ff9ec7)!important;
+ background-size:260% 100%,100% 100%!important;background-position:160% 0,0 0!important;background-repeat:no-repeat!important;
+ box-shadow:0 6px 16px rgba(255,150,200,.26),inset 0 1px 0 rgba(255,255,255,.75),inset 0 -1px 0 rgba(120,60,60,.18)!important;
+ transition:background-position .7s cubic-bezier(.2,.8,.2,1),transform .18s cubic-bezier(.2,1.4,.4,1),opacity .2s}
+html.u16b #dmsend:active{background-position:-60% 0,0 0!important;transform:scale(.96)}
+html.u16b #dmsend:disabled{opacity:.55}
+/* 2. Tapback badge: hang it just outside the bubble's top-right corner instead of over the text. In this layout both sent and
+   received bubbles are left-anchored with the free space on the right (sent bubbles start at x=14, so the old top-left spot sat
+   over the text / screen edge); the right-hand gutter is always free, so both sides use it. */
+html.u16b #dmthread > .bubble.u5-has{margin-top:10px}
+html.u16b .bubble.me > .u5-tb,html.u16b .bubble.them > .u5-tb{left:calc(100% - 8px);right:auto;top:-10px}
+html.u16b .u5-tb{background:rgba(42,36,58,.92);border-color:#0b0912;box-shadow:0 2px 8px rgba(0,0,0,.35)}

@@ -1,0 +1,6 @@
+/* uiux21 · DM composer clearance above AppDeploy's host badge (only while html.u21badge is set by uiux21.js) */
+html.u21badge .chatcomposerwrap{padding-bottom:calc(max(10px, env(safe-area-inset-bottom)) + var(--u21-clear, 64px))!important}
+/* bottom nav: lift every tab above the badge's top edge; the glass extends down and turns solid dark under the tabs so no page content shows in the strip */
+html.u21badge .nav{padding-bottom:calc(max(7px, env(safe-area-inset-bottom)) + var(--u21-clear, 64px))!important;background:linear-gradient(rgba(20,16,30,.62), rgba(12,10,20,.86) 70px, #09080e calc(70px + 12px))!important;align-content:start!important}
+/* feed/screens scroll on the document: keep their end above the taller nav */
+html.u21badge .app{padding-bottom:calc(112px + var(--u21-clear, 64px))!important}

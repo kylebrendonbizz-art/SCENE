@@ -1,0 +1,25 @@
+/* uiux15: calmer notification rows · Apple-glass */
+html.u15 .mo-notifs.u15src{visibility:hidden!important;pointer-events:none!important}
+html.u15 .mo-notifs.u15src::before{display:none!important}
+.u15stack{position:fixed;left:50%;top:max(12px,env(safe-area-inset-top));transform:translateX(-50%);width:min(372px,calc(100% - 20px));z-index:9310;cursor:pointer;
+ font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue",system-ui,sans-serif;-webkit-font-smoothing:antialiased;opacity:0;transition:opacity .35s ease}
+.u15stack.u15on{opacity:1}.u15stack.u15off{opacity:0;transform:translate(-50%,-24px);transition:opacity .4s ease,transform .45s cubic-bezier(.4,0,.2,1)}
+.u15scrim{position:fixed;inset:-40px -100vw;z-index:-1;background:radial-gradient(circle at 50% 8%,rgba(60,30,80,.5),rgba(10,8,20,.5) 60%);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+.u15clock{text-align:center;color:#fff;margin:6px 0 12px}
+.u15clock b{display:block;font-size:64px;font-weight:300;letter-spacing:-.02em;line-height:1}
+.u15clock span{display:block;margin-top:6px;font-size:14px;font-weight:600;color:rgba(255,230,240,.9)}
+.u15rows{display:grid;gap:8px}
+.u15row{display:flex;align-items:center;gap:11px;padding:11px 13px;border-radius:20px;color:#fff;
+ background:linear-gradient(160deg,rgba(80,50,100,.62),rgba(30,20,45,.58));-webkit-backdrop-filter:blur(24px) saturate(180%);backdrop-filter:blur(24px) saturate(180%);
+ border:1px solid rgba(255,255,255,.28);box-shadow:0 14px 34px rgba(20,10,30,.35),inset 0 1px 0 rgba(255,255,255,.45);
+ opacity:0;transform:translateY(-18px) scale(.97);transition:transform .8s cubic-bezier(.2,1.15,.3,1),opacity .55s ease}
+.u15row.u15in{opacity:calc(1 - var(--i,0)*.12);transform:scale(calc(1 - var(--i,0)*.02))}
+.u15row.u15out{opacity:0;transform:translateY(10px) scale(.94)}
+.u15row .ic{flex:0 0 32px;height:32px;border-radius:10px;display:grid;place-items:center;font-size:16px;color:#2a1a10;background:linear-gradient(135deg,#f3d39a,#ffd9e8 60%,#ff9ec7)}
+.u15row .tx{min-width:0;flex:1;font-size:13.5px;font-weight:500;line-height:1.3}
+.u15row .tx b{display:block;font-size:11px;font-weight:700;letter-spacing:.1em;color:rgba(255,235,245,.85);margin-bottom:2px}
+.u15row .tx b i{float:right;font-style:normal;font-weight:500;letter-spacing:0;color:rgba(255,255,255,.6)}
+.u15hint{display:block;text-align:center;margin-top:8px;font-size:11px;color:rgba(255,255,255,.6);text-shadow:0 1px 6px rgba(0,0,0,.4)}
+.u15stack:not(.u15lock) .u15hint{display:none}
+.u15rm .u15row{transition:opacity .2s ease;transform:none!important}
+@media (prefers-reduced-motion:reduce){.u15row{transition:opacity .2s ease!important;transform:none!important}}

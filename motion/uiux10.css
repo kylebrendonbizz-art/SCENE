@@ -1,0 +1,98 @@
+/* SCENE uiux10: Career page redesign. Every rule is scoped to #uiux10 or html[data-uiux10="on"] (set only while the redesign is live).
+   Kill switch: window.SCENE_UIUX10_OFF=true */
+html[data-uiux10="on"] .u10-main > .section.career48,
+html[data-uiux10="on"] .u10-main > .scene-nextmove148,
+html[data-uiux10="on"] .u10-main > #uiux2-today{display:none!important}
+#uiux10{--u10-glass:rgba(255,255,255,.045);--u10-line:rgba(255,255,255,.09);--u10-a1:var(--accent,#a986ff);--u10-a2:var(--blue,#2d9cff);--u10-a3:#ff6fae;--u10-muted:var(--muted,#8d8b97);--u10-ease:cubic-bezier(.2,.8,.2,1);
+ padding:0 0 28px;color:var(--text,#f7f5f2);overflow-x:clip;max-width:100%}
+#uiux10 *{box-sizing:border-box}
+#uiux10 .u10-body>*,#uiux10 .u10-sec{min-width:0;max-width:100%}
+#uiux10 .u10-head button,#uiux10 .u10-sec button,#uiux10 .u10-back{font:inherit;color:inherit;-webkit-tap-highlight-color:transparent;cursor:pointer}
+#uiux10 .u10-glass{background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02));border:1px solid var(--u10-line);border-radius:20px;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 10px 30px rgba(0,0,0,.25)}
+/* sticky compact header under the game's topbar */
+#uiux10 .u10-head{position:sticky;top:var(--u10-top,0px);z-index:20;padding:10px 14px;background:rgba(10,10,15,.84);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--u10-line)}
+#uiux10 .u10-headrow{display:flex;align-items:center;justify-content:space-between;gap:10px;min-height:32px}
+#uiux10 .u10-id{display:flex;align-items:baseline;gap:8px;min-width:0}
+#uiux10 .u10-id small{font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--u10-a1);white-space:nowrap}
+#uiux10 .u10-id b{font-family:Georgia,"Times New Roman",serif;font-weight:400;font-size:21px;letter-spacing:-.02em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#uiux10 .u10-money{flex:0 0 auto;font-size:13px;font-weight:800;font-variant-numeric:tabular-nums;padding:6px 11px;border-radius:999px;background:rgba(111,227,170,.1);border:1px solid rgba(111,227,170,.28);color:#9ff0c6}
+#uiux10 .u10-xp{height:3px;border-radius:9px;background:rgba(255,255,255,.07);overflow:hidden;margin:8px 0 10px}
+#uiux10 .u10-xp i{display:block;height:100%;background:linear-gradient(90deg,var(--u10-a2),var(--u10-a1));border-radius:9px}
+#uiux10 .u10-seg{position:relative;display:grid;grid-template-columns:repeat(4,1fr);padding:3px;border-radius:14px;background:#111118;border:1px solid var(--line,#292934)}
+#uiux10 .u10-seg button{position:relative;z-index:1;min-height:40px;border:0;background:none;border-radius:11px;font-size:11px;font-weight:800;letter-spacing:.03em;color:#8d8b97;transition:color .2s}
+#uiux10 .u10-seg button.on{color:#f8f5fb}
+#uiux10 .u10-segpill{position:absolute;z-index:0;top:3px;bottom:3px;left:3px;width:calc((100% - 6px)/4);border-radius:11px;background:#24232d;box-shadow:0 4px 14px rgba(0,0,0,.25),inset 0 0 0 1px rgba(169,134,255,.25);transform:translateX(calc(var(--i,0)*100%));transition:transform .28s var(--u10-ease)}
+#uiux10 .u10-body{padding:4px 14px 0}
+#uiux10 .u10-sec{margin-top:24px}
+#uiux10 .u10-sechead{display:flex;align-items:baseline;justify-content:space-between;gap:10px;margin:0 2px 12px}
+#uiux10 .u10-sechead h2{margin:0;font-family:Georgia,"Times New Roman",serif;font-size:26px;font-weight:400;line-height:1.05;letter-spacing:-.03em}
+#uiux10 .u10-sub{font-size:11px;color:var(--u10-muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#uiux10 .u10-label{display:block;font-size:10px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--u10-muted);margin:16px 2px 8px}
+/* 1 · Next up hero */
+#uiux10 .u10-hero{position:relative;overflow:hidden;padding:20px 18px 18px;border-radius:24px;background:linear-gradient(150deg,rgba(169,134,255,.28),rgba(45,156,255,.12) 55%,rgba(255,111,174,.14));border:1px solid rgba(169,134,255,.34);box-shadow:0 18px 50px rgba(80,50,180,.22)}
+#uiux10 .u10-glow{position:absolute;inset:-40% -30% auto auto;width:220px;height:220px;border-radius:50%;background:radial-gradient(circle,rgba(255,111,174,.32),transparent 65%);pointer-events:none}
+#uiux10 .u10-kicker{position:relative;display:block;font-size:10px;font-weight:800;letter-spacing:.18em;color:#d6ccff}
+#uiux10 .u10-hero h3{position:relative;margin:8px 0 6px;font-family:Georgia,"Times New Roman",serif;font-size:25px;line-height:1.12;font-weight:400;letter-spacing:-.02em}
+#uiux10 .u10-hero p{position:relative;margin:0 0 14px;font-size:13px;line-height:1.5;color:#d4d0dc}
+#uiux10 .u10-hero .u10-chips{position:relative;margin:0 0 14px}
+#uiux10 .u10-cta{position:relative;width:100%;min-height:50px;border:0;border-radius:16px;background:#f6f2ec;color:#0b0b10!important;font-weight:800;font-size:15px;display:flex;align-items:center;justify-content:center;gap:8px;box-shadow:0 8px 22px rgba(0,0,0,.3)}
+#uiux10 .u10-empty{background:var(--u10-glass);border-color:var(--u10-line);box-shadow:none}
+#uiux10 .u10-empty p{margin:0;color:#b6b2bf;font-size:13px}
+#uiux10 .u10-side{display:grid;grid-template-columns:minmax(0,1fr);gap:8px}
+#uiux10 .u10-sideitem{display:flex;align-items:center;gap:12px;width:100%;min-height:52px;padding:10px 14px;border-radius:16px;text-align:left}
+#uiux10 .u10-dot{flex:0 0 8px;height:8px;border-radius:50%;background:var(--u10-a3);box-shadow:0 0 10px var(--u10-a3)}
+#uiux10 .u10-sidetxt{flex:1;min-width:0}#uiux10 .u10-sidetxt b{display:block;font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#uiux10 .u10-chev{color:#6f6c78;font-size:20px;transition:transform .25s var(--u10-ease)}
+#uiux10 [aria-expanded="true"] .u10-rot{transform:rotate(90deg)}
+/* 2 · Bookings rail */
+#uiux10 .u10-rail{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;margin:0 -14px;padding:2px 14px 8px;scrollbar-width:none;overscroll-behavior-x:contain}
+#uiux10 .u10-rail::-webkit-scrollbar{display:none}
+#uiux10 .u10-book{flex:0 0 78%;max-width:300px;scroll-snap-align:start;padding:15px;display:flex;flex-direction:column;gap:9px;min-height:184px}
+#uiux10 .u10-book.k-story{background:linear-gradient(180deg,rgba(169,134,255,.10),rgba(255,255,255,.02))}
+#uiux10 .u10-place{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--u10-muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#uiux10 .u10-book h3{margin:0;font-size:16px;line-height:1.25;font-weight:800;flex:1}
+#uiux10 .u10-chips{display:flex;flex-wrap:wrap;gap:6px}
+#uiux10 .u10-chip{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:700;padding:5px 9px;border-radius:999px;background:rgba(255,255,255,.06);border:1px solid var(--u10-line);color:#cfcad8;white-space:nowrap}
+#uiux10 .u10-chip em{font-style:normal;color:var(--u10-muted);font-weight:600}
+#uiux10 .u10-pay{background:rgba(111,227,170,.1);border-color:rgba(111,227,170,.3);color:#9ff0c6}
+#uiux10 .u10-low{color:var(--danger,#ff7191);border-color:rgba(255,113,145,.3)}
+#uiux10 .u10-live{width:6px;height:6px;border-radius:50%;background:var(--green,#6fe3aa);box-shadow:0 0 0 0 rgba(111,227,170,.6);animation:u10-pulse 2.4s ease-out infinite}
+@keyframes u10-pulse{0%{box-shadow:0 0 0 0 rgba(111,227,170,.55)}70%,100%{box-shadow:0 0 0 7px rgba(111,227,170,0)}}
+#uiux10 .u10-take{min-height:46px;border:0;border-radius:14px;background:linear-gradient(135deg,var(--u10-a1),var(--u10-a2));color:#fff!important;font-weight:800;font-size:14px;box-shadow:0 6px 18px rgba(80,90,255,.28)}
+#uiux10 .u10-lock{font-size:11px;color:var(--u10-a1);margin:-6px 2px 10px}
+#uiux10 .u10-emptycard{padding:16px;font-size:13px;color:#b6b2bf;border-radius:16px}
+/* 3 · Your story so far */
+#uiux10 .u10-chapter{padding:14px;border-radius:18px;margin-bottom:14px}
+#uiux10 .u10-chtop{display:flex;justify-content:space-between;gap:8px;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--u10-muted)}
+#uiux10 .u10-chapter b{display:block;margin:6px 0 10px;font-family:Georgia,"Times New Roman",serif;font-weight:400;font-size:18px}
+#uiux10 .u10-bar{height:5px;border-radius:9px;background:rgba(255,255,255,.07);overflow:hidden}#uiux10 .u10-bar i{display:block;height:100%;background:linear-gradient(90deg,var(--u10-a3),var(--u10-a1))}
+#uiux10 .u10-reqs{display:block;margin-top:7px;font-size:10px;color:var(--u10-muted)}
+#uiux10 .u10-timeline{list-style:none;margin:0;padding:0 0 0 6px;position:relative}
+#uiux10 .u10-timeline:before{content:"";position:absolute;left:11px;top:8px;bottom:8px;width:2px;border-radius:2px;background:linear-gradient(180deg,rgba(169,134,255,.6),rgba(169,134,255,.05))}
+#uiux10 .u10-tl{position:relative;display:flex;gap:14px;padding:6px 0 12px}
+#uiux10 .u10-tldot{position:relative;z-index:1;flex:0 0 12px;height:12px;margin-top:4px;border-radius:50%;background:#14141b;border:2px solid var(--u10-a1);box-shadow:0 0 0 4px rgba(169,134,255,.12)}
+#uiux10 .u10-tl.k-job .u10-tldot{border-color:var(--green,#6fe3aa)}#uiux10 .u10-tl.k-travel .u10-tldot{border-color:var(--u10-a2)}#uiux10 .u10-tl.k-friend .u10-tldot{border-color:var(--u10-a3)}#uiux10 .u10-tl.k-level .u10-tldot{border-color:var(--gold,#d9b96f)}
+#uiux10 .u10-tl small{display:block;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--u10-muted)}
+#uiux10 .u10-tl b{display:block;font-size:14px;margin-top:2px}
+#uiux10 .u10-tl p{margin:3px 0 0;font-size:12px;line-height:1.45;color:#b6b2bf}
+#uiux10 .u10-link{min-height:44px;border:0;background:none;color:#8fc3ff!important;font-weight:700;font-size:13px;padding:0 4px}
+#uiux10 .u10-back{margin:10px 0 2px}
+/* More: collapsible Skills + Travel/Resources rows */
+#uiux10 .u10-morelist{border-radius:18px;overflow:hidden}
+#uiux10 .u10-morerow{display:flex;align-items:center;gap:12px;width:100%;min-height:58px;padding:10px 14px;border:0;background:none;text-align:left;border-bottom:1px solid var(--u10-line)}
+#uiux10 .u10-morerow:last-child{border-bottom:0}
+#uiux10 .u10-morerow>span:nth-child(2){flex:1;min-width:0}#uiux10 .u10-morerow b{display:block;font-size:14px}#uiux10 .u10-morerow small{display:block;font-size:11px;color:var(--u10-muted);margin-top:2px}
+#uiux10 .u10-mi{flex:0 0 34px;height:34px;border-radius:11px;display:grid;place-items:center;background:rgba(169,134,255,.16);color:#cbbcff;font-size:15px}
+#uiux10 .u10-skillslot{padding:4px 12px 12px;border-bottom:1px solid var(--u10-line);animation:u10-drop .28s var(--u10-ease) both}
+#uiux10 .u10-skillslot[hidden]{display:none}
+#uiux10 .u10-skillslot .scene-career157,#uiux10 .u10-slot .scene-career157{margin-top:0}
+#uiux10 .u10-slot{padding-top:6px}
+@keyframes u10-drop{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
+/* motion: press states + one-time section fade-in when the Career tab opens */
+#uiux10 .u10-cta,#uiux10 .u10-take,#uiux10 .u10-sideitem,#uiux10 .u10-morerow,#uiux10 .u10-link,#uiux10 .u10-seg button{transition:transform .14s var(--u10-ease),filter .14s,background-color .2s,color .2s}
+#uiux10 .u10-cta:active,#uiux10 .u10-take:active,#uiux10 .u10-sideitem:active,#uiux10 .u10-link:active{transform:scale(.97);filter:brightness(.92)}
+#uiux10 .u10-morerow:active{background:rgba(255,255,255,.04)}
+@keyframes u10-in{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+#uiux10 .u10-in>.u10-sec{animation:u10-in .42s var(--u10-ease) both}
+#uiux10 .u10-in>.u10-sec:nth-child(2){animation-delay:.06s}#uiux10 .u10-in>.u10-sec:nth-child(3){animation-delay:.12s}#uiux10 .u10-in>.u10-sec:nth-child(4){animation-delay:.18s}
+@media (prefers-reduced-motion:reduce){#uiux10 *,#uiux10 *:before{transition:none!important;animation:none!important}}

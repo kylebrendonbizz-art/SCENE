@@ -1,0 +1,27 @@
+/* SCENE uiux8: never-blank avatars + stories. Paint-only (background, opacity, absolutely positioned layers):
+   no element changes size, so no layout shift. */
+.avatar.u8-mono{background:radial-gradient(120% 90% at 30% 18%,rgba(255,255,255,.16),rgba(255,255,255,0) 55%),linear-gradient(var(--u8-ang,145deg),var(--u8-a,#2d2a34),var(--u8-b,#17171d))!important;color:#f8f5ef}
+.avatar.u8-mono>span:not(.verified),.avatar>.u8-ini{letter-spacing:.02em;text-shadow:0 1px 6px rgba(0,0,0,.45)}
+.avatar>.u8-ini{position:relative;z-index:0;font-weight:800;line-height:1;pointer-events:none}
+/* a picture that has not (yet) rendered is hidden so the monogram shows; it fades in the moment it loads */
+.avatar.u8-mono>img:not(.u8-ok){opacity:0!important}
+.avatar>img{transition:opacity .18s ease-out}
+.avatar>img.u8-photo{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;object-fit:cover!important;border-radius:50%!important;z-index:2!important;display:block!important}
+/* opened story fallback card (sits under the game's own story image, which wins whenever it loads) */
+.storyscreen.u8-story-fb>.storytextback{display:none}
+.u8-story{position:absolute;inset:0;overflow:hidden;background:radial-gradient(90% 60% at 20% 12%,rgba(255,255,255,.13),rgba(255,255,255,0) 60%),radial-gradient(80% 60% at 90% 95%,rgba(118,93,244,.22),rgba(118,93,244,0) 70%),linear-gradient(var(--u8-ang,150deg),var(--u8-a,#2d2a34),var(--u8-b,#0b0b10));pointer-events:none}
+.u8-story.u8-under{display:none}
+.u8-scard{position:absolute;left:28px;right:28px;top:50%;transform:translateY(-56%);display:flex;flex-direction:column;align-items:center;text-align:center;gap:14px;color:#f8f5ef}
+.u8-smono{width:96px;height:96px;border-radius:50%;display:grid;place-items:center;font-weight:800;font-size:32px;line-height:1;letter-spacing:.03em;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.22);box-shadow:0 10px 40px rgba(0,0,0,.35),inset 0 1px 0 rgba(255,255,255,.18)}
+.u8-stext{margin:0;font-size:24px;line-height:1.25;font-weight:750;text-wrap:balance;text-shadow:0 2px 18px rgba(0,0,0,.45);overflow-wrap:anywhere}
+.u8-swho{display:flex;flex-direction:column;gap:2px;font-size:14px}.u8-swho span{color:rgba(248,245,239,.62);font-size:13px}
+.u8-slatest{max-width:100%;padding:10px 12px;border-radius:14px;background:rgba(0,0,0,.24);border:1px solid rgba(255,255,255,.1);display:flex;flex-direction:column;gap:3px;font-size:13px;color:rgba(248,245,239,.86)}
+.u8-slatest small{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:rgba(248,245,239,.5)}
+.u8-story>.u8-simg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;image-rendering:auto;opacity:0;transition:opacity .2s ease-out}
+.u8-story.u8-hasimg>.u8-simg{opacity:1}
+.u8-story.u8-hasimg>.u8-scard{visibility:hidden}
+.u8-sfade{position:absolute;left:0;right:0;bottom:0;height:38%;background:linear-gradient(180deg,rgba(5,5,7,0),rgba(5,5,7,.78));pointer-events:none}
+@media (prefers-reduced-motion:reduce){.avatar>img,.u8-story>.u8-simg{transition:none}}
+/* uiux8b: when the game draws its own caption or the stories card (emoji + place), keep only the gradient so nothing doubles or overlaps */
+.storyscreen:has(.s229-card) .u8-scard{display:none}
+.storyscreen:has(>.storycaption) .u8-stext{display:none}

@@ -1,0 +1,58 @@
+/* uiux27 · scoped under html.u27 */
+/* picker replaces the MAP tab label */
+.u27pick{display:inline-flex;margin-left:auto;padding:3px;border-radius:999px;background:rgba(255,255,255,.06);box-shadow:inset 0 0 0 1px rgba(243,211,154,.3)}
+.u27pick button{min-width:46px;min-height:30px;padding:0 12px;border:0;border-radius:999px;background:none;color:rgba(255,243,226,.65);font:800 11px/1 system-ui;letter-spacing:.14em;cursor:pointer}
+.u27pick button[aria-pressed="true"]{color:#2a1a10;background:linear-gradient(100deg,#f3d39a,#ffe7f4 55%,#ff9ec7);box-shadow:0 4px 14px rgba(255,158,199,.3)}
+/* district zones + per-district identity (tint var drives dot, zone, label) */
+.u27zone{position:absolute;width:118px;height:118px;margin:-59px 0 0 -59px;border-radius:50%;pointer-events:none;background:radial-gradient(closest-side,var(--t,rgba(243,211,154,.3)),transparent);opacity:.55;mix-blend-mode:screen}
+html.u27 .u27pin{--t:rgba(243,211,154,.6)}
+html.u27 .u27pin .u25dot{background:var(--c,#f3d39a)!important;box-shadow:0 0 0 3px rgba(0,0,0,.35),0 0 14px var(--t)!important}
+html.u27 .u27pin b{display:inline-flex;align-items:center;gap:4px;color:var(--c,#f3d39a)!important;border-color:var(--t)!important}
+.u27g{font-size:11px;line-height:1;opacity:.95}
+/* LA */
+.u27z-hollywood,html.u27 .u27-hollywood{--c:#ffd36b;--t:rgba(255,200,90,.55)}
+html.u27 .u27-hollywood b{font-family:"Arial Black",Impact,system-ui;letter-spacing:.12em;text-transform:uppercase;font-size:10.5px;background:rgba(30,20,0,.82)!important;box-shadow:0 0 12px rgba(255,200,90,.35)}
+.u27z-beverlyHills,html.u27 .u27-beverlyHills{--c:#d8e6a8;--t:rgba(150,200,120,.5)}
+html.u27 .u27-beverlyHills b{font-family:"New York",Georgia,serif;font-style:italic;font-weight:600;background:rgba(12,28,18,.85)!important;box-shadow:inset 0 0 0 1px rgba(243,211,154,.5)}
+.u27z-santaMonica,html.u27 .u27-santaMonica{--c:#9fe3ff;--t:rgba(90,190,255,.5)}
+html.u27 .u27-santaMonica b{font-family:ui-rounded,"SF Pro Rounded",system-ui;border-radius:999px!important;background:rgba(6,26,40,.85)!important}
+.u27z-malibu,html.u27 .u27-malibu{--c:#f1d9b0;--t:rgba(240,200,150,.4)}
+.u27z-calabasas,html.u27 .u27-calabasas{--c:#c9d8c0;--t:rgba(170,200,160,.35)}
+.u27z-burbank,html.u27 .u27-burbank{--c:#c8ccd6;--t:rgba(190,195,210,.35)}
+html.u27 .u27-burbank b{font-family:ui-monospace,Menlo,monospace;letter-spacing:.06em}
+.u27z-weho,html.u27 .u27-weho{--c:#d9a8ff;--t:rgba(190,120,255,.45)}
+.u27z-melrose,html.u27 .u27-melrose{--c:#ff8fc8;--t:rgba(255,110,180,.45)}
+html.u27 .u27-melrose b{font-weight:900;transform:rotate(-3deg)}
+.u27z-silverlake,html.u27 .u27-silverlake{--c:#8fe8d6;--t:rgba(90,220,190,.4)}
+.u27z-culver,html.u27 .u27-culver{--c:#ffb27a;--t:rgba(255,160,90,.4)}
+/* NYC: cold steel-blue night, skyline strip, condensed caps labels — clearly not LA */
+.u25map.u27nyc{background:#0a121c!important}
+.u25map.u27nyc .u25head h2{font-family:"Helvetica Neue","Arial Narrow",system-ui;font-weight:800;letter-spacing:-.01em;text-transform:uppercase}
+.u27stage-nyc[hidden],.u25stage[hidden],.u25around[hidden]{display:none!important}
+.u27riv{fill:rgba(160,200,255,.35);font:700 9px system-ui;letter-spacing:.4em}
+.u27park{fill:rgba(140,210,160,.45);font:700 7px system-ui;letter-spacing:.2em}
+.u27sky{position:absolute;left:0;right:0;top:0;height:46px;pointer-events:none;opacity:.9;background:
+ linear-gradient(#0a121c,#0a121c) 4% 100%/6% 60% no-repeat,linear-gradient(#0d1622,#0d1622) 11% 100%/5% 85% no-repeat,linear-gradient(#0a121c,#0a121c) 17% 100%/7% 45% no-repeat,
+ linear-gradient(#0d1622,#0d1622) 27% 100%/3% 100% no-repeat,linear-gradient(#0a121c,#0a121c) 31% 100%/8% 70% no-repeat,linear-gradient(#0d1622,#0d1622) 41% 100%/5% 55% no-repeat,
+ linear-gradient(#0a121c,#0a121c) 50% 100%/4% 92% no-repeat,linear-gradient(#0d1622,#0d1622) 58% 100%/9% 62% no-repeat,linear-gradient(#0a121c,#0a121c) 70% 100%/5% 80% no-repeat,
+ linear-gradient(#0d1622,#0d1622) 79% 100%/7% 50% no-repeat,linear-gradient(#0a121c,#0a121c) 90% 100%/6% 74% no-repeat,linear-gradient(180deg,rgba(160,200,255,.0),rgba(160,200,255,.14));
+ -webkit-mask:linear-gradient(#000 70%,transparent);mask:linear-gradient(#000 70%,transparent);border-bottom:1px solid rgba(160,200,255,.12)}
+html.u27 .u27stage-nyc .u27pin b{font-family:"Helvetica Neue","Arial Narrow",system-ui;font-weight:800;text-transform:uppercase;letter-spacing:.08em;font-size:10px;border-radius:3px!important;background:rgba(8,16,26,.9)!important}
+.u27z-chelsea,html.u27 .u27-chelsea{--c:#e6e6e6;--t:rgba(220,220,230,.35)}
+.u27z-midtown,html.u27 .u27-midtown{--c:#ffd76a;--t:rgba(255,210,100,.45)}
+.u27z-soho,html.u27 .u27-soho{--c:#ff9ec7;--t:rgba(255,140,190,.4)}
+.u27z-les,html.u27 .u27-les{--c:#ff7a6a;--t:rgba(255,110,90,.4)}
+.u27z-williamsburg,html.u27 .u27-williamsburg{--c:#b8f0a0;--t:rgba(150,230,120,.35)}
+.u27z-brooklyn,html.u27 .u27-brooklyn{--c:#9fc8ff;--t:rgba(120,170,255,.45)}
+/* run-in: four chips (supersede uiux26's two) */
+html.u27 .u25enc .u26chips{display:none!important}
+.u27chips{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px}
+.u27c{min-height:40px;border:0;border-radius:999px;font:700 13px/1 system-ui;cursor:pointer;color:rgba(255,243,226,.86);background:rgba(255,255,255,.06);box-shadow:inset 0 0 0 1px rgba(255,255,255,.14)}
+.u27c-sayhi{color:#2a1a10;background:linear-gradient(100deg,#f3d39a,#ffe7f4 55%,#ff9ec7);box-shadow:0 6px 18px rgba(255,158,199,.25)}
+.u27c-invite{box-shadow:inset 0 0 0 1px rgba(243,211,154,.55);color:#f3d39a}
+.u27c-drama{box-shadow:inset 0 0 0 1px rgba(255,110,150,.6);color:#ff9ec7}
+.u27c.sent{opacity:.55;cursor:default}
+.u27c.sent::after{content:" \2713"}
+
+/* fix(citymaps) Tester: NYC pins with someone there sit above neighbours (SoHo avatars were under the Lower East Side pin) */
+html.u27 .u27stage-nyc .u25pin.hot{z-index:3}html.u27 .u27stage-nyc .u25pin.sel{z-index:4}.u25sheet .u27note{margin:8px 0 0;font-size:12px;opacity:.8}

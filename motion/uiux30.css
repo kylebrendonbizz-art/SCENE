@@ -1,0 +1,92 @@
+/* uiux30 · stronger city vibes — scoped html.u30; .u30fx sits above map art, below pins */
+.u30fx{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.u30fx i{position:absolute;display:block}
+@media (prefers-reduced-motion:reduce){.u30fx i,.u30fx{animation:none!important}}
+
+/* ===== LA · parties ===== */
+.u30fx[data-c="la"]{background:radial-gradient(60% 35% at 50% 100%,rgba(255,60,170,.28),transparent 70%),radial-gradient(40% 30% at 85% 15%,rgba(80,220,255,.14),transparent)}
+.u30fx[data-c="la"] i:nth-child(-n+3){bottom:-10%;left:50%;width:70px;height:130%;transform-origin:50% 100%;background:linear-gradient(0deg,rgba(255,255,255,.28),rgba(255,255,255,0) 85%);filter:blur(3px);mix-blend-mode:screen;clip-path:polygon(40% 100%,60% 100%,100% 0,0 0)}
+.u30fx[data-c="la"] i:nth-child(1){left:22%;animation:u30beam 6s ease-in-out infinite alternate}
+.u30fx[data-c="la"] i:nth-child(2){left:52%;animation:u30beam 7.5s ease-in-out -2s infinite alternate-reverse;background:linear-gradient(0deg,rgba(255,90,200,.35),transparent 85%)}
+.u30fx[data-c="la"] i:nth-child(3){left:80%;animation:u30beam 5.5s ease-in-out -1s infinite alternate;background:linear-gradient(0deg,rgba(90,220,255,.32),transparent 85%)}
+@keyframes u30beam{from{transform:translateX(-50%) rotate(-28deg)}to{transform:translateX(-50%) rotate(28deg)}}
+/* confetti: 8 falling flecks */
+.u30fx[data-c="la"] i:nth-child(n+4):nth-child(-n+11){top:-6%;width:6px;height:10px;border-radius:1px;animation:u30fall 6s linear infinite}
+.u30fx[data-c="la"] i:nth-child(4){left:8%;background:#ffd36b}
+.u30fx[data-c="la"] i:nth-child(5){left:21%;background:#ff5ab4;animation-delay:-1.4s}
+.u30fx[data-c="la"] i:nth-child(6){left:34%;background:#5ae0ff;animation-delay:-3.1s}
+.u30fx[data-c="la"] i:nth-child(7){left:47%;background:#ffd36b;animation-delay:-4.6s}
+.u30fx[data-c="la"] i:nth-child(8){left:60%;background:#b98cff;animation-delay:-.7s}
+.u30fx[data-c="la"] i:nth-child(9){left:72%;background:#ff5ab4;animation-delay:-2.3s}
+.u30fx[data-c="la"] i:nth-child(10){left:84%;background:#5ae0ff;animation-delay:-5.2s}
+.u30fx[data-c="la"] i:nth-child(11){left:93%;background:#ffd36b;animation-delay:-3.8s}
+@keyframes u30fall{0%{transform:translateY(0) rotate(0)}100%{transform:translateY(780px) rotate(540deg)}}
+/* neon horizon + palms */
+.u30fx[data-c="la"] i:nth-child(12){left:0;right:0;bottom:16%;height:2px;background:#ff5ab4;box-shadow:0 0 8px #ff5ab4,0 0 22px #ff5ab4,0 10px 0 -1px #5ae0ff,0 10px 14px #5ae0ff;animation:u30neon 2.4s steps(2) infinite}
+@keyframes u30neon{50%{opacity:.75}}
+.u30fx[data-c="la"] i:nth-child(13),.u30fx[data-c="la"] i:nth-child(14){bottom:16%;width:46px;height:110px;background:#0b0612;clip-path:polygon(46% 100%,54% 100%,54% 30%,100% 22%,60% 18%,92% 4%,52% 12%,50% 0,46% 12%,8% 4%,40% 18%,0 22%,46% 30%)}
+.u30fx[data-c="la"] i:nth-child(13){left:3%}.u30fx[data-c="la"] i:nth-child(14){right:4%;transform:scale(.8);transform-origin:bottom}
+
+/* ===== NYC · night ===== */
+html.u30 .u25map[data-u28-vibe="nyc"] .u27nsvg{opacity:.38!important}
+.u30fx[data-c="nyc"]{background:linear-gradient(180deg,rgba(8,12,40,.55),rgba(3,5,14,.2) 45%,rgba(3,5,14,.5))}
+.u30fx[data-c="nyc"] i:nth-child(1){inset:0;background:radial-gradient(circle 1px,#fff 98%,transparent) 0 0/53px 47px,radial-gradient(circle .8px,rgba(255,255,255,.7) 98%,transparent) 21px 13px/37px 61px;-webkit-mask:linear-gradient(#000,transparent 30%);mask:linear-gradient(#000,transparent 30%);animation:u30tw 3s ease-in-out infinite alternate}
+@keyframes u30tw{from{opacity:.5}to{opacity:1}}
+.u30fx[data-c="nyc"] i:nth-child(2){right:9%;top:3%;width:46px;height:46px;border-radius:50%;background:radial-gradient(circle at 38% 38%,#fffaf0,#f1e6c8 60%,#d9caa4);box-shadow:0 0 30px 8px rgba(255,246,220,.35),0 0 90px 30px rgba(160,190,255,.15)}
+/* skyline with lit windows (top, behind header area of the stage) */
+.u30fx[data-c="nyc"] i:nth-child(3){left:0;right:0;top:0;height:120px;background:linear-gradient(#060914,#060914);clip-path:polygon(0 100%,0 55%,6% 55%,6% 40%,12% 40%,12% 62%,17% 62%,17% 30%,20% 30%,20% 22%,21% 10%,22% 22%,24% 22%,24% 50%,30% 50%,30% 34%,36% 34%,36% 58%,42% 58%,42% 26%,46% 26%,46% 48%,52% 48%,52% 36%,58% 36%,58% 18%,60% 12%,62% 18%,62% 54%,68% 54%,68% 38%,74% 38%,74% 60%,80% 60%,80% 30%,86% 30%,86% 50%,92% 50%,92% 42%,100% 42%,100% 100%)}
+.u30fx[data-c="nyc"] i:nth-child(4){left:0;right:0;top:0;height:120px;background:radial-gradient(circle 1.3px,rgba(255,214,120,.95) 95%,transparent) 0 0/9px 11px,radial-gradient(circle 1.1px,rgba(200,225,255,.8) 95%,transparent) 4px 6px/13px 15px;clip-path:polygon(0 100%,0 57%,6% 57%,6% 42%,12% 42%,12% 64%,17% 64%,17% 32%,24% 32%,24% 52%,30% 52%,30% 36%,36% 36%,36% 60%,42% 60%,42% 28%,46% 28%,46% 50%,52% 50%,52% 38%,58% 38%,58% 20%,62% 20%,62% 56%,68% 56%,68% 40%,74% 40%,74% 62%,80% 62%,80% 32%,86% 32%,86% 52%,92% 52%,92% 44%,100% 44%,100% 100%);animation:u30win 5s steps(3) infinite}
+@keyframes u30win{33%{opacity:.8}66%{opacity:.95}}
+.u30fx[data-c="nyc"] i:nth-child(5){left:0;right:0;top:112px;height:30px;background:linear-gradient(rgba(255,200,120,.22),transparent);filter:blur(4px)}
+.u30fx[data-c="nyc"] i:nth-child(6){left:58%;top:0;width:2px;height:18px;background:#ff4d4d;box-shadow:0 0 8px #ff4d4d;animation:u30neon 1.6s steps(2) infinite}
+.u30fx[data-c="nyc"] i:nth-child(7),.u30fx[data-c="nyc"] i:nth-child(8){left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(255,214,120,.5),transparent)}
+.u30fx[data-c="nyc"] i:nth-child(7){top:58%}.u30fx[data-c="nyc"] i:nth-child(8){top:74%;opacity:.6}
+
+/* ===== Cape Town · beach ===== */
+.u30fx[data-c="cpt"] i:nth-child(1){left:-4%;right:10%;top:20%;height:92px;background:linear-gradient(180deg,#6d5a5e,#4a3c42);clip-path:polygon(0 100%,4% 55%,9% 30%,13% 8%,64% 4%,70% 16%,76% 10%,82% 34%,90% 60%,100% 100%);box-shadow:none}
+.u30fx[data-c="cpt"] i:nth-child(2){right:-2%;top:23%;width:90px;height:80px;background:linear-gradient(180deg,#5d4b50,#43363c);clip-path:polygon(0 100%,30% 40%,52% 0,64% 10%,72% 38%,100% 100%)}
+.u30fx[data-c="cpt"] i:nth-child(3){left:6%;right:24%;top:19%;height:10px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.75),rgba(255,255,255,.4),transparent);border-radius:50%;filter:blur(3px)}
+.u30fx[data-c="cpt"] i:nth-child(4){right:6%;top:2%;width:150px;height:150px;border-radius:50%;background:repeating-conic-gradient(rgba(255,240,190,.35) 0 6deg,transparent 6deg 18deg);-webkit-mask:radial-gradient(closest-side,transparent 26%,#000 28%,transparent 100%);mask:radial-gradient(closest-side,transparent 26%,#000 28%,transparent 100%);animation:u30spin 40s linear infinite}
+@keyframes u30spin{to{transform:rotate(360deg)}}
+.u30fx[data-c="cpt"] i:nth-child(5){left:0;right:0;top:69%;height:3%;background:radial-gradient(ellipse 18px 6px at 50% 100%,rgba(255,255,255,.95) 60%,transparent 64%) 0 0/36px 100% repeat-x;animation:u30surf 4s ease-in-out infinite alternate}
+@keyframes u30surf{from{transform:translate(-10px,0)}to{transform:translate(10px,4px)}}
+.u30fx[data-c="cpt"] i:nth-child(6){left:16%;top:80%;width:64px;height:32px;border-radius:64px 64px 0 0;background:repeating-conic-gradient(from -90deg at 50% 100%,#ff6b6b 0 18deg,#fff7e8 18deg 36deg)}
+.u30fx[data-c="cpt"] i:nth-child(7){left:calc(16% + 31px);top:calc(80% + 30px);width:2px;height:34px;background:#8a6a4a}
+.u30fx[data-c="cpt"] i:nth-child(8){right:6%;bottom:6%;width:60px;height:150px;background:#2f2a26;clip-path:polygon(46% 100%,54% 100%,52% 30%,100% 24%,58% 18%,90% 4%,52% 12%,48% 0,46% 12%,6% 6%,40% 18%,0 26%,48% 30%)}
+
+/* ===== London · old money ===== */
+.u28stage[data-c="ldn"]{background:radial-gradient(70% 40% at 50% 20%,rgba(243,211,154,.16),transparent),linear-gradient(180deg,#1d2a24,#13201b 55%,#0e1714)!important}
+.u30fx[data-c="ldn"] i:nth-child(1){inset:0;background:repeating-linear-gradient(90deg,rgba(243,211,154,.07) 0 1px,transparent 1px 22px)}
+/* classical facade: pediment + columns */
+.u30fx[data-c="ldn"] i:nth-child(2){left:8%;right:30%;bottom:6%;height:150px;background:repeating-linear-gradient(90deg,#d8cfb6 0 10px,#b9ae93 10px 12px,rgba(0,0,0,0) 12px 30px),linear-gradient(#cfc5aa,#cfc5aa) 0 0/100% 14px no-repeat,linear-gradient(#cfc5aa,#cfc5aa) 0 100%/100% 12px no-repeat;opacity:.32}
+.u30fx[data-c="ldn"] i:nth-child(3){left:6%;right:28%;bottom:calc(6% + 150px);height:46px;background:linear-gradient(#d8cfb6,#b9ae93);clip-path:polygon(0 100%,50% 0,100% 100%);opacity:.32}
+/* clock tower with gilt face */
+.u30fx[data-c="ldn"] i:nth-child(4){right:10%;bottom:6%;width:34px;height:300px;background:linear-gradient(#2b2a22,#1a1913);clip-path:polygon(15% 100%,15% 22%,0 22%,0 16%,20% 16%,50% 0,80% 16%,100% 16%,100% 22%,85% 22%,85% 100%)}
+.u30fx[data-c="ldn"] i:nth-child(5){right:calc(10% + 6px);bottom:calc(6% + 220px);width:22px;height:22px;border-radius:50%;background:radial-gradient(circle,#fff3cf 30%,#f3d39a 60%,#b48a3c);box-shadow:0 0 14px rgba(243,211,154,.6)}
+/* gilt Thames */
+.u30fx[data-c="ldn"] i:nth-child(6){left:-10%;right:-10%;top:60%;height:60px;border-radius:50%;border-top:18px solid rgba(40,60,70,.85);box-shadow:inset 0 10px 18px -8px rgba(243,211,154,.5);transform:rotate(-6deg)}
+/* fog bands */
+.u30fx[data-c="ldn"] i:nth-child(7),.u30fx[data-c="ldn"] i:nth-child(8){left:-40%;width:180%;height:110px;background:linear-gradient(90deg,transparent,rgba(225,225,215,.16),transparent);filter:blur(10px);animation:u30fog 16s linear infinite alternate}
+.u30fx[data-c="ldn"] i:nth-child(7){top:30%}.u30fx[data-c="ldn"] i:nth-child(8){top:72%;animation-duration:22s}
+@keyframes u30fog{to{transform:translateX(20%)}}
+
+/* ===== Paris · fashion ===== */
+.u28stage[data-c="par"]{background:linear-gradient(180deg,#2b1e3c 0%,#7e4a72 30%,#e59a8c 58%,#f6dcb6 80%,#fbead2 100%)!important}
+.u30fx[data-c="par"] i:nth-child(1){left:18%;bottom:14%;width:96px;height:66%;background:linear-gradient(#24182c,#3b2836);clip-path:polygon(47% 0,53% 0,56% 28%,64% 56%,100% 100%,78% 100%,64% 80%,36% 80%,22% 100%,0 100%,36% 56%,44% 28%)}
+.u30fx[data-c="par"] i:nth-child(2){left:18%;bottom:14%;width:96px;height:66%;background:radial-gradient(circle 1.4px,#ffe7a8 95%,transparent) 0 0/7px 9px;clip-path:polygon(47% 0,53% 0,56% 28%,64% 56%,100% 100%,78% 100%,64% 80%,36% 80%,22% 100%,0 100%,36% 56%,44% 28%);animation:u30tw 1.2s steps(2) infinite}
+.u30fx[data-c="par"] i:nth-child(3){left:calc(18% + 46px);top:calc(20% - 8px);width:4px;height:4px;border-radius:50%;background:#fff;box-shadow:0 0 12px 4px rgba(255,240,200,.8)}
+/* runway: perspective floor + lights */
+.u30fx[data-c="par"] i:nth-child(4){left:-20%;right:-20%;bottom:0;height:16%;background:repeating-linear-gradient(90deg,rgba(255,255,255,.18) 0 1px,transparent 1px 36px),linear-gradient(rgba(40,20,40,.15),rgba(40,20,40,.45));transform:perspective(160px) rotateX(48deg);transform-origin:bottom}
+.u30fx[data-c="par"] i:nth-child(5){left:0;right:0;bottom:15.5%;height:4px;background:radial-gradient(circle 2px,#fff 90%,transparent) 0 0/22px 4px repeat-x;filter:drop-shadow(0 0 4px #ffe7a8)}
+/* bokeh */
+.u30fx[data-c="par"] i:nth-child(n+6){width:46px;height:46px;border-radius:50%;background:radial-gradient(circle,rgba(255,220,200,.45),rgba(255,220,200,0) 70%);animation:u30bokeh 6s ease-in-out infinite alternate}
+.u30fx[data-c="par"] i:nth-child(6){left:62%;top:14%}.u30fx[data-c="par"] i:nth-child(7){left:80%;top:30%;animation-delay:-2s;width:30px;height:30px}
+.u30fx[data-c="par"] i:nth-child(8){left:50%;top:44%;animation-delay:-4s;width:60px;height:60px}.u30fx[data-c="par"] i:nth-child(9){left:6%;top:10%;animation-delay:-1s}
+.u30fx[data-c="par"] i:nth-child(10){left:86%;top:58%;animation-delay:-3s;width:36px;height:36px}
+@keyframes u30bokeh{from{transform:translateY(0);opacity:.6}to{transform:translateY(-14px);opacity:1}}
+
+/* pins stay readable above the art */
+html.u30 .u25stage>.u25pin,html.u30 .u25stage>.u25cluster{z-index:2}
+
+/* ===== uiux29b: Career Your Move hero gold ring (uiux10c's #uiux10 rule out-specified uiux29) ===== */
+html.u30.u29career #uiux10 .u10-hero{border:0!important;box-shadow:inset 0 0 0 1.5px rgba(243,211,154,.6),0 10px 30px rgba(243,211,154,.08)!important}

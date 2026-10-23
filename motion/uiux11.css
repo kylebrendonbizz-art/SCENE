@@ -1,0 +1,45 @@
+/* uiux11: birthday wheel picker · Apple-glass glamour (frosted glass, soft gold + pink, SF type, spring motion) */
+.u11picker{--u11-row:40px;--u11-gold:#f3d39a;--u11-pink:#ff9ec7;--u11-ink:#fff;position:fixed;inset:0;z-index:2147483000;display:flex;align-items:flex-end;justify-content:center;
+ font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","Helvetica Neue",system-ui,sans-serif;-webkit-font-smoothing:antialiased;color:var(--u11-ink)}
+.u11backdrop{position:absolute;inset:0;background:radial-gradient(120% 70% at 50% 100%,rgba(255,158,199,.18),rgba(10,8,20,.55) 60%);opacity:0;transition:opacity .32s ease;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+.u11sheet{position:relative;width:min(100%,440px);margin:0 8px calc(8px + env(safe-area-inset-bottom,0px));padding:8px 14px 14px;border-radius:30px;
+ background:linear-gradient(160deg,rgba(255,255,255,.20),rgba(255,255,255,.07) 45%,rgba(255,190,220,.10));
+ -webkit-backdrop-filter:blur(28px) saturate(180%);backdrop-filter:blur(28px) saturate(180%);
+ border:1px solid rgba(255,255,255,.28);box-shadow:0 30px 80px rgba(0,0,0,.45),inset 0 1px 0 rgba(255,255,255,.45),inset 0 -1px 0 rgba(255,255,255,.08);
+ transform:translateY(110%);transition:transform .55s cubic-bezier(.2,1.25,.32,1)}
+.u11sheet::before{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;background:radial-gradient(80% 50% at 15% 0%,rgba(243,211,154,.22),transparent 60%),radial-gradient(70% 50% at 100% 100%,rgba(255,158,199,.20),transparent 60%)}
+.u11picker.u11on .u11backdrop{opacity:1}
+.u11picker.u11on .u11sheet{transform:none}
+.u11picker.u11off .u11backdrop{opacity:0}
+.u11picker.u11off .u11sheet{transform:translateY(110%);transition:transform .3s cubic-bezier(.5,0,.75,0)}
+.u11grab{width:38px;height:5px;border-radius:3px;background:rgba(255,255,255,.35);margin:2px auto 6px}
+.u11head{position:relative;display:flex;align-items:center;justify-content:space-between;gap:8px}
+.u11head strong{font-size:17px;font-weight:600;letter-spacing:-.01em}
+.u11btn{appearance:none;border:0;background:rgba(255,255,255,.10);color:#fff;font:inherit;font-size:16px;padding:9px 15px;border-radius:999px;min-height:40px;cursor:pointer;transition:transform .2s cubic-bezier(.2,1.4,.4,1),background .2s}
+.u11btn:active{transform:scale(.94)}
+.u11done{font-weight:600;color:#2a1a10;background:linear-gradient(135deg,var(--u11-gold),#ffd0e4 70%,var(--u11-pink));box-shadow:0 6px 18px rgba(255,158,199,.35),inset 0 1px 0 rgba(255,255,255,.7)}
+.u11btn:focus-visible{outline:2px solid var(--u11-gold);outline-offset:2px}
+.u11col:focus{outline:none}
+.u11col:focus-visible .u11item.on{color:var(--u11-gold);text-shadow:0 0 16px rgba(243,211,154,.55)}
+.u11readout{position:relative;text-align:center;margin:10px 0 4px;min-height:40px}
+.u11date{display:block;font-family:"New York","Iowan Old Style",Georgia,serif;font-size:22px;font-weight:600;letter-spacing:-.01em;background:linear-gradient(90deg,#fff,var(--u11-gold) 60%,var(--u11-pink));-webkit-background-clip:text;background-clip:text;color:transparent}
+.u11age{display:block;font-size:13px;color:rgba(255,255,255,.66);margin-top:2px;font-variant-numeric:tabular-nums}
+.u11wheels{position:relative;display:grid;grid-template-columns:1.5fr .8fr 1fr;gap:4px;height:calc(var(--u11-row)*5);margin:6px 0 4px;perspective:520px;
+ -webkit-mask-image:linear-gradient(transparent,#000 26%,#000 74%,transparent);mask-image:linear-gradient(transparent,#000 26%,#000 74%,transparent)}
+.u11band{position:absolute;left:0;right:0;top:calc(var(--u11-row)*2);height:var(--u11-row);border-radius:13px;pointer-events:none;
+ background:linear-gradient(90deg,rgba(243,211,154,.20),rgba(255,255,255,.16) 50%,rgba(255,158,199,.20));
+ -webkit-backdrop-filter:blur(4px) saturate(160%);backdrop-filter:blur(4px) saturate(160%);
+ box-shadow:inset 0 1px 0 rgba(255,255,255,.35),inset 0 -1px 0 rgba(255,255,255,.12),0 0 24px rgba(255,190,220,.18)}
+.u11col{position:relative;height:100%;overflow-y:scroll;overflow-x:hidden;scroll-snap-type:y mandatory;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;scrollbar-width:none;touch-action:pan-y;border-radius:12px;transform-style:preserve-3d}
+.u11col::-webkit-scrollbar{display:none}
+.u11pad{height:calc(var(--u11-row)*2)}
+.u11item{height:var(--u11-row);line-height:var(--u11-row);scroll-snap-align:center;text-align:center;font-size:21px;font-weight:400;letter-spacing:-.01em;color:rgba(255,255,255,.92);
+ font-variant-numeric:tabular-nums;white-space:nowrap;user-select:none;-webkit-user-select:none;cursor:pointer;transition:color .15s;transform-style:preserve-3d}
+.u11item>span{display:block;transform-origin:50% 50% -60px;backface-visibility:hidden;will-change:transform}
+.u11item.on{color:#fff;font-weight:600;text-shadow:0 0 14px rgba(255,210,230,.45)}
+.u11col[data-u11col="month"] .u11item{text-align:left;padding-left:14px}
+.u11col[data-u11col="year"] .u11item{text-align:right;padding-right:14px}
+.u11hint{display:block;text-align:center;font-size:12px;color:rgba(255,255,255,.5);margin-top:6px}
+.u11rm .u11sheet,.u11rm .u11backdrop{transition:none}
+@media (prefers-reduced-motion:reduce){.u11sheet,.u11backdrop,.u11btn{transition:none!important}}
+.u11col.u11glide{scroll-snap-type:none}

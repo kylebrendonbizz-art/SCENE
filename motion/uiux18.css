@@ -1,0 +1,94 @@
+/* uiux18 · storyline presentation (glass, gold #f3d39a / pink #ff9ec7, ink #2a1a10). Kill switch SCENE_UIUX18_OFF. */
+.u18title,.u18break,.u18toast{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","SF Pro Display","Helvetica Neue",system-ui,sans-serif;-webkit-tap-highlight-color:transparent}
+/* ---------- chapter title card: letterboxed episode open ---------- */
+.u18title{position:fixed;inset:0;z-index:2147482990;display:flex;align-items:center;justify-content:center;overflow:hidden;background:rgba(5,3,9,0);transition:background .5s ease;cursor:pointer}
+.u18title.in{background:rgba(5,3,9,.78)}
+.u18bar{position:absolute;left:0;right:0;height:13vh;background:#000;z-index:2;transition:transform .6s cubic-bezier(.2,.9,.2,1)}
+.u18top{top:0;transform:translateY(-100%)}.u18bot{bottom:0;transform:translateY(100%)}
+.u18title.in .u18bar{transform:none}
+.u18spot{position:absolute;top:-20%;left:-60%;width:70%;height:140%;z-index:1;pointer-events:none;opacity:0;
+ background:radial-gradient(closest-side,rgba(255,236,200,.28),rgba(255,180,220,.10) 55%,transparent);transform:rotate(14deg)}
+.u18title.in .u18spot{animation:u18sweep 2.6s .35s cubic-bezier(.4,.1,.3,1) forwards}
+@keyframes u18sweep{0%{left:-60%;opacity:0}25%{opacity:1}100%{left:110%;opacity:.2}}
+.u18panel{position:relative;z-index:3;width:min(340px,86vw);padding:34px 24px 26px;border-radius:28px;text-align:center;color:#f7f2fb;
+ background:linear-gradient(160deg,rgba(52,38,70,.55),rgba(24,18,36,.5));-webkit-backdrop-filter:blur(24px) saturate(170%);backdrop-filter:blur(24px) saturate(170%);
+ box-shadow:inset 0 1px 0 rgba(255,255,255,.18),inset 0 0 0 1px rgba(255,255,255,.08),0 30px 80px rgba(0,0,0,.5),0 0 90px rgba(243,211,154,.12);
+ opacity:0;transform:scale(.94);transition:opacity .5s .25s ease,transform .8s .25s cubic-bezier(.2,1.2,.3,1)}
+.u18title.in .u18panel{opacity:1;transform:none}
+.u18kick{display:block;font-size:12px;font-weight:700;letter-spacing:.32em;color:#f3d39a;font-variant:small-caps;margin-bottom:10px;opacity:0;animation:u18up .6s .55s ease-out forwards}
+.u18name{margin:0;font-family:"New York","Iowan Old Style",Georgia,"Times New Roman",serif;font-weight:400;font-size:44px;line-height:1.02;letter-spacing:-.02em;
+ background:linear-gradient(180deg,#fff,#ffe6f0 60%,#f3d39a);-webkit-background-clip:text;background-clip:text;color:transparent;opacity:0;animation:u18title 1s .7s cubic-bezier(.2,.9,.2,1) forwards}
+@keyframes u18title{from{opacity:0;letter-spacing:.12em;filter:blur(6px)}to{opacity:1;letter-spacing:-.02em;filter:none}}
+.u18tease{margin:14px 0 0;font-size:14px;color:rgba(247,242,251,.78);opacity:0;animation:u18up .6s 1.25s ease-out forwards}
+.u18tap{display:block;margin-top:18px;font-size:11px;letter-spacing:.08em;color:rgba(247,242,251,.4);opacity:0;animation:u18up .6s 1.6s ease-out forwards}
+@keyframes u18up{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.u18title.out{background:rgba(5,3,9,0);transition:background .4s ease}
+.u18title.out .u18panel{opacity:0;transform:scale(1.03);transition:opacity .3s,transform .4s}
+.u18title.out .u18bar{transition:transform .4s ease-in}.u18title.out .u18top{transform:translateY(-100%)}.u18title.out .u18bot{transform:translateY(100%)}
+/* ---------- "story moves on" toast ---------- */
+.u18toast{position:fixed;left:50%;top:calc(env(safe-area-inset-top,0px) + 74px);z-index:2147482980;min-width:220px;max-width:86vw;padding:11px 18px 12px;border-radius:20px;color:#f7f2fb;text-align:center;
+ background:linear-gradient(160deg,rgba(52,38,70,.72),rgba(24,18,36,.66));-webkit-backdrop-filter:blur(22px) saturate(170%);backdrop-filter:blur(22px) saturate(170%);
+ box-shadow:inset 0 1px 0 rgba(255,255,255,.18),inset 0 0 0 1px rgba(255,255,255,.08),0 14px 36px rgba(0,0,0,.4);
+ transform:translate(-50%,-24px) scale(.96);opacity:0;transition:transform .5s cubic-bezier(.2,1.35,.35,1),opacity .3s;cursor:pointer}
+.u18toast.in{transform:translate(-50%,0);opacity:1}
+.u18toast.out{transform:translate(-50%,-14px);opacity:0;transition:transform .3s ease-in,opacity .25s}
+.u18toast small{display:block;font-size:10px;font-weight:700;letter-spacing:.2em;color:#f3d39a}
+.u18toast b{display:block;margin-top:3px;font-size:15px;font-weight:600}
+.u18dots{display:flex;justify-content:center;gap:6px;margin-top:8px}
+.u18dots i{width:18px;height:4px;border-radius:2px;background:rgba(255,255,255,.16)}
+.u18dots i.on{background:linear-gradient(90deg,#f3d39a,#ff9ec7)}
+.u18dots i.nx{background:rgba(255,158,199,.45);animation:u18pulse 1.4s ease-in-out infinite}
+/* ---------- chapter done: BREAKING flash ---------- */
+.u18break{position:fixed;inset:0;z-index:2147482990;display:flex;align-items:flex-start;justify-content:center;padding-top:calc(env(safe-area-inset-top,0px) + 18vh);background:rgba(5,3,9,0);transition:background .4s;cursor:pointer}
+.u18break.in{background:rgba(5,3,9,.6)}
+.u18flash{position:absolute;inset:0;background:#fff;opacity:0;pointer-events:none}
+.u18break.in .u18flash{animation:u18flash .9s ease-out forwards}
+@keyframes u18flash{0%{opacity:.95}12%{opacity:.1}22%{opacity:.75}34%{opacity:0}46%{opacity:.4}60%,100%{opacity:0}}
+.u18bpanel{position:relative;width:min(350px,90vw);padding:16px 18px 18px;border-radius:24px;color:#fff;
+ background:linear-gradient(160deg,rgba(60,24,40,.7),rgba(24,14,26,.66));-webkit-backdrop-filter:blur(24px) saturate(170%);backdrop-filter:blur(24px) saturate(170%);
+ box-shadow:inset 0 1px 0 rgba(255,255,255,.18),inset 0 0 0 1px rgba(255,255,255,.08),0 26px 70px rgba(0,0,0,.5),0 0 60px rgba(255,90,120,.18);
+ transform:translateY(-30px) rotate(-1.5deg) scale(.94);opacity:0;transition:transform .6s .12s cubic-bezier(.2,1.4,.35,1),opacity .3s .12s}
+.u18break.in .u18bpanel{transform:rotate(-1.5deg);opacity:1}
+.u18btop{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.u18tag{padding:4px 9px;border-radius:6px;background:linear-gradient(180deg,#ff3b5c,#d81b3f);font-weight:900;font-size:12px;letter-spacing:.12em;box-shadow:0 0 18px rgba(255,59,92,.5);animation:u18pulse 1.2s ease-in-out infinite}
+.u18btop small{font-size:11px;font-weight:700;letter-spacing:.12em;color:#f3d39a;text-transform:uppercase;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.u18head{margin:0;font-family:"Impact","Haettenschweiler","Arial Narrow Bold","SF Pro Display",system-ui,sans-serif;font-weight:900;font-size:27px;line-height:1.08;text-transform:uppercase;letter-spacing:.01em}
+.u18next{margin:12px 0 0;padding-top:10px;border-top:1px solid rgba(255,255,255,.12);font-size:14px;font-weight:600;color:#ffd9e8;opacity:0;transform:translateY(6px);transition:opacity .5s,transform .5s}
+.u18break.teaser .u18next{opacity:1;transform:none}
+.u18break.out{background:rgba(5,3,9,0)}.u18break.out .u18bpanel{opacity:0;transform:translateY(-16px) rotate(-1.5deg);transition:opacity .3s,transform .35s ease-in}
+.u18yield{opacity:0!important;visibility:hidden;pointer-events:none;transition:opacity .2s,visibility 0s .2s}
+@keyframes u18pulse{50%{opacity:.6}}
+/* ---------- Career tracker ---------- */
+.u18track{margin:0 0 12px;padding:14px 14px 12px;border-radius:22px;background:linear-gradient(160deg,rgba(255,255,255,.085),rgba(255,255,255,.035) 55%,rgba(255,170,215,.045));
+ -webkit-backdrop-filter:blur(16px) saturate(150%);backdrop-filter:blur(16px) saturate(150%);box-shadow:inset 0 1px 0 rgba(255,255,255,.16),inset 0 0 0 1px rgba(255,255,255,.07),0 10px 30px rgba(0,0,0,.22);color:#f7f2fb;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text",system-ui,sans-serif}
+.u18trhead{display:flex;align-items:baseline;gap:8px;margin:0 2px 10px}
+.u18trhead small{font-size:10.5px;font-weight:700;letter-spacing:.2em;color:#f3d39a}
+.u18trhead b{flex:1;font-family:"New York",Georgia,"Times New Roman",serif;font-weight:400;font-size:21px;letter-spacing:-.01em}
+.u18trhead span{font-size:12px;color:rgba(247,242,251,.6);font-variant-numeric:tabular-nums}
+.u18pills{list-style:none;margin:0;padding:0;display:flex;gap:6px}
+.u18pill{flex:1 1 0;min-width:0;display:flex;align-items:center;gap:6px;min-height:40px;padding:6px 9px;border-radius:14px;background:rgba(255,255,255,.05);box-shadow:inset 0 0 0 1px rgba(255,255,255,.06);font-size:12px;line-height:1.2}
+.u18pi{flex:none;width:18px;height:18px;border-radius:50%;display:grid;place-items:center;font-size:10px;font-weight:800}
+.u18pl{overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+.u18pill.done .u18pi{background:linear-gradient(135deg,#f3d39a,#ff9ec7);color:#2a1a10}
+.u18pill.done{color:rgba(247,242,251,.82)}
+.u18pill.next{background:rgba(255,158,199,.12);box-shadow:inset 0 0 0 1px rgba(255,158,199,.45),0 0 18px rgba(255,158,199,.25);animation:u18glow 2.2s ease-in-out infinite}
+.u18pill.next .u18pi{color:#ff9ec7;font-size:9px}
+.u18live .u18pill.next{cursor:pointer}
+.u18pill.locked{opacity:.42}
+.u18pill.locked .u18pi{box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.25)}
+@keyframes u18glow{50%{box-shadow:inset 0 0 0 1px rgba(255,158,199,.7),0 0 26px rgba(255,158,199,.4)}}
+/* ---------- Feed: thin chapter line inside the Today / next-move card ---------- */
+.u18line{display:flex;align-items:center;gap:8px;margin-top:10px;padding-top:9px;border-top:1px solid rgba(255,255,255,.07);font:600 11px/1 -apple-system,BlinkMacSystemFont,"SF Pro Text",system-ui,sans-serif;color:rgba(247,242,251,.7);width:100%;flex-basis:100%}
+.u18line span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:62%}
+.u18line i{flex:1;height:3px;border-radius:2px;background:rgba(255,255,255,.12);overflow:hidden}
+.u18line i b{display:block;height:100%;border-radius:2px;background:linear-gradient(90deg,#f3d39a,#ff9ec7)}
+.u18line em{font-style:normal;color:#f3d39a;font-variant-numeric:tabular-nums}
+@media (prefers-reduced-motion:reduce){.u18title *,.u18break *,.u18toast,.u18pill{animation:none!important;transition:none!important}.u18kick,.u18name,.u18tease,.u18tap{opacity:1}.u18name{filter:none}}
+/* the game's next-move card is a flex row: let the chapter line take its own full-width row */
+.scene-nextmove148:has(> .u18line){flex-wrap:wrap}
+.scene-nextmove148 > .u18line{order:99;margin-top:8px}
+.u18head.u18mid{font-size:22px}
+.u18head.u18long{font-size:18.5px;line-height:1.14}
+/* uiux18b: ripple line toast, ~70 chars on 2 lines at 390px */
+.u18toast.u18rip{width:min(344px,90vw);max-width:none;padding:10px 18px 11px}
+.u18toast.u18rip b{font-size:14.5px;line-height:1.32;font-weight:600;text-wrap:balance;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}

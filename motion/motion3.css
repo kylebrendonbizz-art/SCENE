@@ -1,0 +1,55 @@
+/* SCENE motion layer · batch 3 */
+/* lock-screen blow-up look */
+.mo-notifs.mo-lock{width:min(372px,calc(100% - 16px));padding:10px 0 12px;gap:6px}
+.mo-notifs.mo-lock::before{content:"";position:fixed;inset:-40px -100vw;background:radial-gradient(circle at 50% 10%,rgba(30,20,60,.6),rgba(0,0,0,.55) 60%);z-index:-1}
+.mo-lock .mo-notif{background:rgba(32,30,42,.82);color:#f4f1eb;backdrop-filter:blur(18px);border:1px solid rgba(255,255,255,.08)}
+.mo-lock .mo-notif .ic{background:rgba(255,255,255,.12)}
+.mo-lock .mo-notif .tx b{color:#cfc8de}
+/* paparazzi */
+.mo-pap{position:fixed;inset:0;z-index:9360;pointer-events:none}
+.mo-flashbulb{position:absolute;inset:0;opacity:0;background:radial-gradient(circle at var(--x) var(--y),#fff 0,rgba(255,255,255,.9) 8%,rgba(255,255,255,.25) 30%,transparent 60%);will-change:opacity}
+.mo-tabloid{position:absolute;left:50%;top:22%;width:min(330px,86%);margin-left:max(-165px,-43%);pointer-events:auto;background:#fffdf5;color:#111;border-radius:6px;box-shadow:0 26px 60px rgba(0,0,0,.55);transform:rotate(-3deg);overflow:hidden;will-change:transform,opacity}
+.mo-tabloid .bar{display:flex;justify-content:space-between;align-items:center;background:#e0102b;color:#fff;padding:7px 12px;font:900 11px/1 system-ui,sans-serif;letter-spacing:.18em}
+.mo-tabloid .bar b{background:#ffe600;color:#111;padding:3px 6px;letter-spacing:.12em}
+.mo-tabloid h3{margin:12px 14px 6px;font:900 21px/1.05 Impact,'Arial Black',system-ui,sans-serif;letter-spacing:-.01em;text-transform:uppercase}
+.mo-tabloid p{margin:0 14px 14px;font:700 11px/1.2 system-ui,sans-serif;color:#7a1020;letter-spacing:.04em}
+.mo-tabloid .cam{position:absolute;right:10px;bottom:8px;font-size:22px;opacity:.85}
+/* travel */
+.mo-travel{position:fixed;inset:0;z-index:9450;display:grid;place-items:center;background:radial-gradient(circle at 50% 35%,#1c1640,#07070c 70%);color:#fff;overflow:hidden}
+.mo-travel>*{grid-area:1/1}
+.mo-pass{display:flex;width:min(340px,88%);filter:drop-shadow(0 22px 40px rgba(0,0,0,.5));will-change:transform,opacity}
+.mo-pass .main{flex:1;background:linear-gradient(135deg,#fff,#efeaff);color:#141020;border-radius:16px 0 0 16px;padding:14px 16px;border-right:2px dashed #b9b2cc;will-change:transform,opacity}
+.mo-pass .stub{width:74px;background:linear-gradient(135deg,#ffe3f4,#e9e3ff);color:#141020;border-radius:0 16px 16px 0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;will-change:transform,opacity}
+.mo-pass small{font:800 9px/1 system-ui,sans-serif;letter-spacing:.16em;color:#6b6480}
+.mo-pass .stub b{font:900 26px/1 system-ui,sans-serif}
+.mo-pass .route{display:flex;align-items:center;justify-content:space-between;margin:10px 0}
+.mo-pass .route b{font:900 34px/1 system-ui,sans-serif;letter-spacing:-.02em}.mo-pass .route span{font-size:22px;color:#7a5cff}
+.mo-pass .meta{display:flex;justify-content:space-between;font:800 8px/1.5 system-ui,sans-serif;letter-spacing:.14em;color:#6b6480}
+.mo-pass .meta em{font:900 12px/1.4 system-ui,sans-serif;font-style:normal;color:#141020;letter-spacing:.02em}
+.mo-map{position:relative;width:320px;height:170px;opacity:0;will-change:transform,opacity}
+.mo-map svg{display:block}
+.mo-plane{position:absolute;left:0;top:0;width:26px;height:26px;margin:-13px 0 0 -13px;offset-path:path('M40 130 Q160 -10 280 110');offset-rotate:auto;offset-distance:0%;opacity:0;filter:drop-shadow(0 0 8px rgba(122,240,255,.8));will-change:offset-distance,transform}
+.mo-plane svg{display:block}
+.mo-city{text-align:center;pointer-events:none}
+.mo-city h1{margin:0;font:900 clamp(56px,19vw,92px)/.9 system-ui,-apple-system,sans-serif;letter-spacing:-.05em;opacity:0;will-change:transform,opacity}
+.mo-city h2{margin:10px 0 0;font:800 26px/1 system-ui,sans-serif;color:#cfc8ff;opacity:0;will-change:transform,opacity}
+.mo-travel.rm .mo-pass,.mo-travel.rm .mo-map{display:none}.mo-travel.rm .mo-city h1,.mo-travel.rm .mo-city h2{opacity:1}
+.mo-tskip{position:absolute;right:14px;top:max(14px,env(safe-area-inset-top));align-self:start;justify-self:end;background:rgba(255,255,255,.14);color:#fff;border:0;border-radius:999px;padding:8px 13px;font:800 11px/1 system-ui,sans-serif}
+/* relationship heat rings */
+.avatar.mo-heat{box-shadow:0 0 0 2px #0b0b10,0 0 0 4px var(--mo-heat),0 0 14px color-mix(in srgb,var(--mo-heat) 45%,transparent)!important}
+.storyav.mo-heat{outline-color:var(--mo-heat)!important}
+.avatar.mo-crack{box-shadow:0 0 0 2px #0b0b10,0 0 0 4px #5a5a66!important;outline:2px dashed #ff4a5a;outline-offset:3px}
+.avatar.mo-crack::after{content:"";position:absolute;inset:0;pointer-events:none;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Cpath d='M22 0 18 12l6 5-7 9 3 14' fill='none' stroke='%23ff4a5a' stroke-width='1.6' stroke-linejoin='round'/%3E%3C/svg%3E") center/100% 100% no-repeat;opacity:.9}
+/* living background */
+#mo-bg{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;opacity:.55}
+#mo-bg i{position:absolute;width:75vmax;height:75vmax;border-radius:50%;will-change:transform;animation:mo-drift 48s ease-in-out infinite alternate}
+#mo-bg i:nth-child(1){left:-30vmax;top:-25vmax;background:radial-gradient(circle,var(--b1,#7a5cff) 0,transparent 62%);opacity:.5}
+#mo-bg i:nth-child(2){right:-35vmax;top:20vh;background:radial-gradient(circle,var(--b2,#ff3d9a) 0,transparent 62%);opacity:.38;animation-duration:61s;animation-direction:alternate-reverse}
+#mo-bg i:nth-child(3){left:-10vmax;bottom:-45vmax;background:radial-gradient(circle,var(--b3,#3dd1ff) 0,transparent 62%);opacity:.32;animation-duration:73s}
+@keyframes mo-drift{0%{transform:translate3d(0,0,0) scale(1)}50%{transform:translate3d(8vmax,6vmax,0) scale(1.12)}100%{transform:translate3d(-5vmax,10vmax,0) scale(.95)}}
+html.mo-hidden #mo-bg i{animation-play-state:paused}
+#app{position:relative;z-index:1}
+.app{background:radial-gradient(circle at 50% -180px,rgba(62,55,92,.22),transparent 380px),rgba(9,9,13,.84)!important}
+@media (prefers-reduced-motion: reduce){#mo-bg i{animation:none}}
+html[data-mo-reduced="1"] #mo-bg i{animation:none}
+.mo-tabloid.debug .bar{background:#3a3a44}.mo-tabloid.debug .bar b{background:#9a97a4}

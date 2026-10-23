@@ -1,0 +1,87 @@
+/* uiux19 · density pass (390pt phones). Scoped under html.u19; kill switch window.SCENE_UIUX19_OFF. Tap targets stay >= 44px where they already were. */
+html.u19{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+html.u19 .app{font-size:14.5px}
+/* top header + stat chips (172px -> ~132px) */
+html.u19 .topbar{padding:8px 12px 8px}
+html.u19 .topbar .levelrow{margin-bottom:5px}
+html.u19 .topbar .wordmark{font-size:23px;height:30px}
+html.u19 .topbar .wordmark img{height:24px;width:auto}
+html.u19 .topbar .meta{margin-top:2px;font-size:11px}
+html.u19 .topbar .location94{margin-top:4px}
+html.u19 .topbar .hudrow{margin-top:7px}
+html.u19 .topbar .hudrow>span{padding:4px 8px;min-height:0}
+html.u19 .topbar .hudrow>span>b{font-size:13px;line-height:18px}
+html.u19 .topbar .hudrow .energy>b{font-size:14px;line-height:18px}
+/* bottom nav */
+html.u19 .nav .navbtn{min-height:52px;height:auto}
+html.u19 .nav .fab{width:52px;height:52px;font-size:26px}
+/* Career header + sections */
+html.u19 #uiux10 .u10-head{padding:8px 14px 8px}
+html.u19 #uiux10 .u10-id b{font-size:18px}
+html.u19 #uiux10 .u10-money{padding:4px 10px;font-size:12.5px}
+html.u19 #uiux10 .u10-xp{margin:6px 0 8px}
+html.u19 #uiux10 .u10-seg{padding:2px}
+html.u19 #uiux10 .u10-body{padding-top:2px}
+html.u19 #uiux10 .u10-sec{margin-top:18px}
+html.u19 #uiux10 .u10-sechead{margin-bottom:9px}
+html.u19 #uiux10 .u10-sechead h2{font-size:22px;line-height:1.15}
+html.u19 #uiux10 .u10-hero{padding:14px 14px 14px}
+html.u19 #uiux10 .u10-hero h3{font-size:21px;line-height:1.18}
+html.u19 #uiux10 .u10-cta{min-height:46px;height:46px}
+html.u19 #uiux10 .u10-hero p{margin-bottom:11px}
+html.u19 #uiux10 .u10-hero .u10-chips{margin-bottom:11px}
+html.u19 #uiux10 .u10-hero h3{margin:6px 0 5px}
+html.u19 #uiux10 .u10-book h3{font-size:15px}
+html.u19 #uiux10 .u18track{padding:11px 12px 10px}
+html.u19 #uiux10 .u18trhead b{font-size:18px}
+/* booking / event sheet */
+html.u19 .sheet{padding:12px 12px 14px}
+html.u19 .sheethead .sheettitle{font-size:15.5px;line-height:1.25}
+html.u19 .jobbrief{padding:13px 12px}
+html.u19 .jobbrief h3{font-size:21px;line-height:1.2}
+html.u19 .sheet .eventchoice{min-height:46px;padding:6px 12px;gap:8px;margin:6px 0}
+html.u19 .sheet .eventchoice small{margin-top:2px}
+html.u19 .sheet .eventchoice em{font-size:18px}
+html.u19 .outcomecard h2{font-size:22px}
+/* city-story intro card (openStory48 · .storyophero) and event / story228 scene hero (.eventhero): 28px serif -> 22px */
+html.u19 .sheet .storyophero,html.u19 .sheet .eventhero,html.u19 .sheet .travelhero{padding:13px 13px 12px}
+html.u19 .sheet .storyophero h3,html.u19 .sheet .eventhero h3,html.u19 .sheet .travelhero h3{font-size:22px;line-height:1.16;margin:7px 0 6px}
+html.u19 .sheet .storyophero p{line-height:1.45}
+html.u19 .sheet .travelmode{min-height:48px;padding-top:9px;padding-bottom:9px}
+html.u19 .sheet>.heading{margin:12px 2px 6px}
+/* Feed */
+html.u19 .uiux2-today{padding:11px 12px 10px}
+html.u19 .uiux2-today>strong{font-size:15.5px}
+html.u19 .post{padding:13px 13px 0}
+html.u19 .post .posttext{font-size:15px;line-height:1.38}
+html.u19 .feedtabs .feedtab{min-height:44px;height:44px}
+/* Circle + DMs */
+html.u19 .circlepage h2{font-size:24px}
+html.u19 .messagespane strong{font-size:17px}
+html.u19 .circletabs button{min-height:44px;height:44px}
+html.u19 .inboxlist .dmrow{padding:9px 14px;min-height:64px}
+html.u19 .dmthread .bubble{padding:8px 12px}
+/* You */
+html.u19 .youhead{padding:16px 14px 14px}
+html.u19 .youstats b{font-size:17px}
+html.u19 .youbuttons .btn{min-height:44px}
+/* travel ARRIVAL + other outcome cards (.outcomecard): uiux16 glass card system, density scale */
+html.u19 .outcomeoverlay .outcomecard{border-radius:24px;padding:18px 16px 16px;width:min(360px,calc(100vw - 32px))}
+html.u19 .outcomecard .outcomehalo{width:44px;height:44px;font-size:19px;margin:0 auto 9px}
+html.u19 .outcomecard .eventtag{font-size:10px;letter-spacing:.16em}
+html.u19 .outcomecard>p{font-size:13px;line-height:1.45;margin:0 auto 12px;color:rgba(244,241,248,.72)}
+html.u19 .outcomecard .rewardburst{gap:6px;margin:10px 0 12px}
+html.u19 .outcomecard .rewardburst span{background:var(--u16-fill,rgba(255,255,255,.08));border:0;box-shadow:var(--u16-edge,inset 0 0 0 1px rgba(255,255,255,.1)),0 4px 14px rgba(0,0,0,.18);border-radius:14px;padding:6px 11px;font-size:12px;font-weight:700;color:#f4f1f8;font-variant-numeric:tabular-nums;letter-spacing:0}
+html.u19 .outcomecard .outcomeripple{border:0;padding:0 6px;margin:4px 0 14px;font-size:11px;line-height:1.45;color:rgba(244,241,248,.5);text-align:center}
+html.u19 .outcomecard .btn.full{min-height:46px;border-radius:16px;font-size:15px;font-weight:800;margin-top:0}
+/* Feed For you / Following: glass segmented control with a sliding gold-pink indicator (40px track, 44px hit area) */
+html.u19 .feedtabs{position:relative;display:grid;grid-template-columns:1fr 1fr;height:40px;margin:8px 14px 6px;padding:0;border:0!important;border-radius:999px;background:var(--u16-fill,rgba(255,255,255,.07));box-shadow:var(--u16-edge,inset 0 0 0 1px rgba(255,255,255,.09));-webkit-backdrop-filter:blur(18px) saturate(1.4);backdrop-filter:blur(18px) saturate(1.4);isolation:isolate}
+html.u19 .feedtabs::before{content:'';position:absolute;z-index:0;top:3px;bottom:3px;left:3px;width:calc(50% - 3px);border-radius:999px;background:linear-gradient(100deg,#f3d39a,#ff9ec7);box-shadow:0 4px 14px rgba(255,158,199,.28),inset 0 1px 0 rgba(255,255,255,.5);transition:transform .32s cubic-bezier(.34,1.3,.64,1)}
+html.u19 .feedtabs:has(.feedtab.on[data-filter="following"])::before{transform:translateX(100%)}
+html.u19 .feedtabs .feedtab{position:relative;z-index:1;height:44px!important;min-height:44px;margin:-2px 0;background:none!important;box-shadow:none!important;border:0!important;border-radius:999px;font-size:13px;font-weight:700;color:rgba(244,241,248,.55);transition:color .25s}
+html.u19 .feedtabs .feedtab.on{color:#2a1a10}
+html.u19[data-u19slide="r"] .feedtabs::before{animation:u19slideR .34s cubic-bezier(.34,1.3,.64,1)}
+html.u19[data-u19slide="l"] .feedtabs::before{animation:u19slideL .34s cubic-bezier(.34,1.3,.64,1)}
+@keyframes u19slideR{from{transform:translateX(0)}to{transform:translateX(100%)}}
+@keyframes u19slideL{from{transform:translateX(100%)}to{transform:translateX(0)}}
+@media (prefers-reduced-motion:reduce){html.u19 .feedtabs::before{transition:none;animation:none!important}}

@@ -1,0 +1,66 @@
+/* uiux31 · map rebuild to Kyle's mockup: photo cities on torn paper, neon script header + pill picker, torn-paper district tags,
+   gold MAP tab on the nav. Photos: Unsplash (free licence), local in motion/uiux31/. Scoped to html.u31 + .u25map.u31m. */
+html.u31 .u25map.u31m{background:radial-gradient(120% 60% at 50% 0%,#2a0f24 0%,#0b0710 55%,#07060b 100%)}
+/* header: neon script + LIVE · TODAY + neon pill picker */
+html.u31 .u31m .u25head{background:linear-gradient(180deg,rgba(10,6,14,.98),rgba(10,6,14,.6));border-bottom:0;flex-wrap:wrap;row-gap:6px}
+html.u31 .u31m .u25head small{color:#ff7ac4;letter-spacing:.3em;text-shadow:0 0 8px rgba(255,62,165,.6)}
+html.u31 .u31m .u25head h2{white-space:nowrap;font-family:"Pacifico","Dancing Script","Kaushan Script","Snell Roundhand","Brush Script MT",cursive;font-weight:400;font-size:28px;line-height:1.2;background:none;color:#ff4fb0;-webkit-text-fill-color:#ff4fb0;text-shadow:0 0 6px rgba(255,79,176,.9),0 0 18px rgba(255,79,176,.55),0 0 40px rgba(255,79,176,.3)}
+html.u31 .u31m .u25tab{display:none}
+html.u31 .u31m .u27pick{background:rgba(0,0,0,.55);box-shadow:inset 0 0 0 1px rgba(255,122,196,.35);margin-left:0;flex:1 0 100%;order:9;justify-content:space-between}
+html.u31 .u31m .u27pick button{min-width:0;flex:1;color:rgba(255,236,246,.75)}
+html.u31 .u31m .u27pick button[aria-pressed="true"]{color:#fff;background:linear-gradient(100deg,#ff2f9a,#ff6fc0);box-shadow:0 0 14px rgba(255,47,154,.75),0 0 2px #fff inset}
+/* stage = a torn photo print on the dark table */
+html.u31 .u31m .u31stage{margin:8px 10px 6px;overflow:visible;filter:drop-shadow(0 12px 22px rgba(0,0,0,.6));transform:rotate(-.5deg)}
+html.u31 .u31m .u31stage[data-c="par"],html.u31 .u31m .u27stage-nyc.u31stage{transform:rotate(.5deg)}
+html.u31 .u31m .u31stage>.u25svg,html.u31 .u31m .u31stage>svg,html.u31 .u31m .u31stage>.u28bg,html.u31 .u31m .u31stage>.u30fx{opacity:0!important;visibility:hidden}
+html.u31 .u31m .u31stage::before,html.u31 .u31m .u31stage::after{display:none!important}
+.u31photo{position:absolute;inset:0;pointer-events:none;z-index:0}
+.u31photo::before{content:"";position:absolute;inset:0;background:#f3ead8;clip-path:var(--u31-torn);background-image:linear-gradient(90deg,rgba(120,90,50,.08),transparent 30%,rgba(120,90,50,.06))}
+.u31img,.u31shade{position:absolute;inset:7px 8px;clip-path:var(--u31-torn2);background:#222 center/cover no-repeat}
+.u31photo[data-c="la"] .u31img{background-image:url("uiux31/la.jpg");background-position:50% 60%}
+.u31photo[data-c="par"] .u31img{background-image:url("uiux31/par.jpg");background-position:50% 40%}
+.u31photo[data-c="cpt"] .u31img{background-image:url("uiux31/cpt.jpg")}
+.u31photo[data-c="nyc"] .u31img{background-image:url("uiux31/nyc.jpg")}
+.u31photo[data-c="ldn"] .u31img{background-image:url("uiux31/ldn.jpg")}
+.u31img{filter:saturate(1.15) contrast(1.05)}
+.u31shade{background:linear-gradient(180deg,rgba(0,0,0,.55) 0%,rgba(0,0,0,0) 26%,rgba(0,0,0,0) 62%,rgba(0,0,0,.5) 100%)}
+/* uiux30 vibe colour feeds the print: a thin neon line under the title */
+.u31photo[data-c="la"]{--u31v:#ff7a45}.u31photo[data-c="nyc"]{--u31v:#7aa8ff}.u31photo[data-c="cpt"]{--u31v:#3fd6c4}.u31photo[data-c="ldn"]{--u31v:#d9b25f}.u31photo[data-c="par"]{--u31v:#ff9ec7}
+.u31title{position:absolute;left:20px;top:16px;right:110px;display:flex;flex-direction:column;align-items:flex-start;gap:1px}
+.u31crown{font-size:15px;color:#f3d39a;text-shadow:0 0 8px rgba(243,211,154,.8);line-height:1}
+.u31title b{display:none}
+.u31title em{font:400 19px/1.15 "Pacifico","Dancing Script","Kaushan Script","Snell Roundhand","Brush Script MT",cursive;font-style:normal;color:#fff;text-shadow:0 2px 10px rgba(0,0,0,.8),0 0 14px color-mix(in srgb,var(--u31v) 70%,transparent);border-bottom:2px solid var(--u31v);padding-bottom:2px}
+.u31tape{position:absolute;top:-6px;left:18%;width:62px;height:20px;background:rgba(245,232,200,.72);box-shadow:0 1px 3px rgba(0,0,0,.25);transform:rotate(-7deg);clip-path:polygon(3% 0,97% 6%,100% 50%,96% 100%,2% 94%,0 45%)}
+.u31tape2{left:auto;right:14%;transform:rotate(6deg)}
+/* pins: torn-paper tags with a coloured dot; celebs in white polaroid rims */
+html.u31 .u31m .u31stage .u25pin{z-index:2}
+html.u31 .u31m .u31stage .u25pin b{background:#f6efe1!important;color:#1d1420!important;-webkit-text-fill-color:#1d1420;text-shadow:none!important;font:800 10.5px/1.2 system-ui,-apple-system,sans-serif!important;letter-spacing:.03em;border:0!important;border-radius:0!important;padding:5px 10px 5px 18px!important;box-shadow:none!important;clip-path:var(--u31-tag);position:relative;transform:rotate(-2.5deg);filter:drop-shadow(0 2px 2px rgba(0,0,0,.4))}
+html.u31 .u31m .u31stage .u25pin:nth-of-type(2n) b{transform:rotate(2deg)}
+html.u31 .u31m .u31stage .u25pin b::before{content:"";position:absolute;left:7px;top:50%;width:6px;height:6px;margin-top:-3px;border-radius:50%;background:var(--u31dot,#ff4fb0)}
+html.u31 .u31m .u31stage .u25pin:not(.hot) b{--u31dot:#9a8a7a}
+html.u31 .u31m .u31stage .u25pin .u25dot{box-shadow:0 0 0 2px #fff,0 0 10px rgba(255,79,176,.8)}
+html.u31 .u31m .u31stage .u25pin.sel b{background:#ffd3e8!important;outline:0}
+html.u31 .u31m .u31stage .u25cluster{top:23%!important;left:52%!important}
+html.u31 .u31m .u31stage .u25pin .avatar{box-shadow:0 0 0 2.5px #fff,0 6px 12px rgba(0,0,0,.55)!important}
+html.u31 .u31m .u31stage .u25cluster small{color:#fff;text-shadow:0 1px 6px #000}
+/* venue sheet: a torn note card */
+html.u31 .u31m .u25sheet{background:#f6efe1;color:#1d1420;border-radius:0;clip-path:var(--u31-torn);box-shadow:none;filter:drop-shadow(0 10px 18px rgba(0,0,0,.55));padding:18px 18px 16px}
+html.u31 .u31m .u25sheet small{color:#c2186f;letter-spacing:.2em}
+html.u31 .u31m .u25sheet b,html.u31 .u31m .u25sheet span{color:#1d1420}
+html.u31 .u31m .u25sheet p,html.u31 .u31m .u25sheet em{color:rgba(29,20,32,.62)}
+html.u31 .u31m .u25sheet .u25who{background:rgba(29,20,32,.06)}
+html.u31 .u31m .u25around{background:rgba(8,6,12,.92);border-top:1px solid rgba(255,79,176,.2)}
+html.u31 .u31m .u25around small{color:#ff7ac4}
+/* gold MAP tab docked on the nav's top edge */
+.u31tab{position:fixed;left:50%;transform:translateX(-50%);z-index:60;display:flex;align-items:center;gap:7px;height:36px;padding:0 20px 0 6px;border:0;border-radius:18px 18px 10px 10px;background:linear-gradient(180deg,#ffe6a8,#f3c46a 55%,#d99a3a);color:#2a1606;font:900 13px/1 system-ui,-apple-system,sans-serif;letter-spacing:.2em;box-shadow:0 6px 18px rgba(243,196,106,.45),0 0 0 1.5px rgba(255,248,230,.7) inset,0 -1px 0 rgba(255,255,255,.6) inset;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.u31tab[hidden]{display:none}
+.u31tab .u31globe{display:grid;place-items:center;width:26px;height:26px;border-radius:50%;background:#2a1606;color:#ffd98a}
+.u31tab[aria-pressed="true"]{background:linear-gradient(180deg,#ff8fcf,#ff3ea5);color:#fff;box-shadow:0 0 18px rgba(255,62,165,.7),0 0 0 1.5px rgba(255,255,255,.6) inset}
+.u31tab[aria-pressed="true"] .u31globe{background:#fff;color:#ff3ea5}
+/* run-in chips: Writer's line stays; the plain action (Say hi / Invite her / Start drama / Walk on) sits above it as a kicker */
+html.u31 .u25enc .u27c{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;line-height:1.15}
+html.u31 .u25enc .u27c[data-writer="1"]::before{font:800 8.5px/1 system-ui,-apple-system,sans-serif;letter-spacing:.18em;text-transform:uppercase;opacity:.72}
+html.u31 .u25enc .u27c-sayhi[data-writer="1"]::before{content:"Say hi"}
+html.u31 .u25enc .u27c-invite[data-writer="1"]::before{content:"Invite her"}
+html.u31 .u25enc .u27c-drama[data-writer="1"]::before{content:"Start drama"}
+html.u31 .u25enc .u27c-walk[data-writer="1"]::before{content:"Walk on"}

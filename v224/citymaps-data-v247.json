@@ -1,0 +1,20 @@
+{
+ "v": 247,
+ "cities": {
+  "la": {"name": "Los Angeles", "label": "Los Angeles", "tag": "Sunset grid",
+   "spots": [
+    {"id": "hollywood", "label": "Hollywood", "x": 30, "y": 30},
+    {"id": "beverlyHills", "label": "Beverly Hills", "x": 60, "y": 55},
+    {"id": "santaMonica", "label": "Santa Monica", "x": 18, "y": 72}
+   ]},
+  "nyc": {"name": "New York", "label": "New York", "tag": "Street grid",
+   "spots": [
+    {"id": "soho", "label": "SoHo", "x": 26, "y": 70},
+    {"id": "midtown", "label": "Midtown", "x": 40, "y": 28},
+    {"id": "brooklyn", "label": "Brooklyn", "x": 72, "y": 66}
+   ]}
+ },
+ "celebs": ["kim", "britney", "kylie"],
+ "inCity": {"base": 0.35, "famePer": 0.0025, "fameMax": 0.25, "max": 2},
+ "memDays": 2
+}

@@ -1,0 +1,55 @@
+body.pf252-you #uiux2-today,body.pf252-you .scene-nextmove148,body.pf252-you .u31tab{display:none!important}
+.pf252{padding:0 16px 90px!important}
+.pf252 .pf-cover{height:118px;margin:0 -16px;border-radius:0 0 18px 18px;position:relative}
+.pf-stage{position:absolute;right:12px;bottom:10px;font:700 10px/1 system-ui;letter-spacing:.12em;padding:5px 9px;border-radius:99px;background:rgba(0,0,0,.35);color:#fff}
+.pf-head{display:flex;justify-content:space-between;align-items:flex-end;margin-top:-44px;padding:0 4px}
+.pf-av{border-radius:50%;padding:3px;background:#2a2638}
+.pf-av .avatar{width:88px!important;height:88px!important;font-size:28px;border:3px solid #120f1c}
+.pf-av.ring-breakthrough{background:linear-gradient(135deg,#8b5cf6,#ec4899);box-shadow:0 0 16px rgba(236,72,153,.45)}
+.pf-av.ring-recognized{background:linear-gradient(135deg,#f5d77a,#c8963e)}
+.pf-av.ring-mainstream,.pf-av.ring-icon{background:conic-gradient(#ffe7a0,#c8963e,#fff3c4,#c8963e,#ffe7a0);box-shadow:0 0 18px rgba(255,211,107,.45)}
+.pf-av.ring-icon{animation:pfspark 3.5s ease-in-out infinite}
+@keyframes pfspark{50%{box-shadow:0 0 28px rgba(255,231,160,.8)}}
+.pf-btns{display:flex;gap:8px;margin:0}.pf-btns .btn{padding:8px 16px;min-height:0}
+.pf-name{margin-top:10px}.pf-name strong{font-size:20px;display:flex;align-items:center;gap:6px}.pf-name span{display:block;color:#9a95ad;font-size:13px;margin-top:2px}
+.pf-lock{display:inline-grid;place-items:center;width:16px;height:16px;border-radius:50%;background:#3a3648;color:#77728a;font-size:10px}
+.pf-lockhint{font-size:10px!important;font-weight:600;color:#77728a!important;display:inline!important;margin:0!important}
+.pf-bio{margin:8px 0;font-size:14px;color:#e6e3ef}.pf-auto{color:#cfcadb}
+.pf-stats{display:flex;justify-content:space-around;padding:10px 0;border-top:1px solid rgba(255,255,255,.07);border-bottom:1px solid rgba(255,255,255,.07)}
+.pf-stats div{text-align:center}.pf-stats b{display:block;font-size:17px}.pf-stats span{font-size:11px;color:#9a95ad}
+.pf-chips{display:flex;gap:6px;margin:10px 0}.pf-chips span{font-size:11px;padding:4px 9px;border-radius:99px;background:rgba(255,255,255,.06);color:#cfcadb}
+.pf-co{display:flex;align-items:center;gap:8px;font-size:12px;color:#b8b3c7;margin:4px 0 10px}
+.pf-cofaces{display:flex}.pf-cofaces .avatar{width:22px!important;height:22px!important;margin-right:-7px;border:2px solid #120f1c;font-size:8px}
+.pf-buzz{display:flex;justify-content:space-between;gap:10px;align-items:center;font-size:12px;padding:8px 12px;border-radius:12px;background:rgba(255,255,255,.04)}
+.pf-buzzline{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:#cfcadb}.pf-buzz b{white-space:nowrap;color:#7cf0a8;font-size:11px}
+.pf-shelf{display:flex;gap:8px;overflow-x:auto;padding:10px 0;scrollbar-width:none}.pf-shelf::-webkit-scrollbar{display:none}
+.pf-tro{flex:0 0 auto;display:flex;align-items:center;gap:6px;font-size:14px;padding:6px 10px;border-radius:12px;background:rgba(255,255,255,.04);opacity:.35;filter:grayscale(1)}
+.pf-tro b{font-size:11px;font-weight:600;color:#e6e3ef}.pf-tro.on,.pf-rival{opacity:1;filter:none;background:rgba(255,211,107,.10)}.pf-rival{background:rgba(255,90,90,.12)}
+.pf-pin{margin:4px 0 8px}.pf-pinlbl{font:700 10px system-ui;letter-spacing:.1em;color:#9a95ad}
+.pf-tabs{display:flex!important;gap:0;margin-top:8px;border-bottom:1px solid rgba(255,255,255,.08)}.pf-tabs button{flex:1;width:auto!important}.pf-tabs button:not(.on){opacity:.5}
+.pf-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;margin-top:6px;position:relative}
+.pf-tile{aspect-ratio:1;border:0;padding:6px;border-radius:6px;background:linear-gradient(160deg,#241f33,#18141f);color:#cfcadb;font-size:10px;text-align:left;position:relative;overflow:hidden}
+.pf-tile img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.pf-tile span{position:relative;display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden}
+.pf-tile.ghost{background:rgba(255,255,255,.03);border:1px dashed rgba(255,255,255,.08)}
+.pf-ghostmsg{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;font-size:13px;color:#b8b3c7}
+#pf252reveal{position:fixed;inset:0;z-index:99999;display:grid;place-items:center;background:rgba(8,6,14,.55)}
+.pf-flash{position:absolute;inset:0;background:#fff;animation:pfflash .7s ease-out forwards;pointer-events:none}
+@keyframes pfflash{0%{opacity:.95}100%{opacity:0}}
+.pf-conf{position:absolute;inset:0;overflow:hidden;pointer-events:none}.pf-conf i{position:absolute;top:-10px;width:7px;height:11px;border-radius:2px;animation:pfconf 2.4s ease-in forwards}
+@keyframes pfconf{to{top:105%;opacity:.2}}
+.pf-card{position:relative;text-align:center;padding:26px 26px 20px;border-radius:22px;background:#191527;color:#fff;width:270px;box-shadow:0 20px 60px rgba(0,0,0,.5);animation:pfpop .5s cubic-bezier(.2,1.4,.4,1)}
+@keyframes pfpop{from{transform:scale(.6);opacity:0}}
+.pf-bigcheck{width:64px;height:64px;margin:0 auto 12px;border-radius:50%;background:#1d9bf0;display:grid;place-items:center;font-size:34px;font-weight:800;box-shadow:0 0 30px rgba(29,155,240,.6)}
+.pf-card b{display:block;font-size:20px}.pf-card span{display:block;font-size:13px;color:#b8b3c7;margin:6px 0 14px}
+.pf-card button{border:0;border-radius:99px;padding:9px 26px;background:#fff;color:#111;font-weight:700}
+.pf-progress{margin:10px 14px;padding:14px;border-radius:16px;background:linear-gradient(135deg,rgba(139,92,246,.18),rgba(236,72,153,.10));border:1px solid rgba(255,255,255,.08)}
+.pf-plvl{display:flex;justify-content:space-between;align-items:baseline}.pf-plvl b{font-size:18px}.pf-plvl span{font-size:12px;color:#b8b3c7}
+.pf-pbar{height:6px;border-radius:9px;background:rgba(255,255,255,.08);margin:8px 0 10px;overflow:hidden}.pf-pbar i{display:block;height:100%;background:linear-gradient(90deg,#8b5cf6,#ec4899)}
+.pf-prow{display:flex;justify-content:space-between;gap:12px;font-size:12px;padding:4px 0}.pf-prow span{color:#9a95ad}.pf-prow b{text-align:right;font-weight:600}
+.activityrow.pf-low{opacity:.6}.activityrow.pf-hide{display:none!important}
+.pf-seeall{display:block;width:calc(100% - 28px);margin:8px 14px;padding:10px;border-radius:12px;border:1px solid rgba(255,255,255,.1);background:transparent;color:#cfcadb;font-weight:600}
+.ff232inbox .ff232ih{cursor:pointer}.ff232inbox .ff232ih::after{content:' · tap to open';opacity:.6;text-transform:none;letter-spacing:0}
+.ff232inbox.pf-open .ff232ih::after{content:''}
+.ff232inbox:not(.pf-open) .ff232ir{display:none!important}
+.ff232inbox .ff232ir{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}

@@ -1,0 +1,66 @@
+/* uiux12: level-up moment · Apple-glass glamour */
+html.u12 #scene-overlay157.u12src{display:none!important}
+.u12moment{position:fixed;inset:0;z-index:2147482000;display:flex;align-items:center;justify-content:center;padding:24px;cursor:pointer;
+ font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","Helvetica Neue",system-ui,sans-serif;-webkit-font-smoothing:antialiased;color:#fff;
+ --g:#f3d39a;--pk:#ff9ec7;opacity:0;transition:opacity .35s ease}
+.u12moment.u12on{opacity:1}
+.u12moment.u12off{opacity:0;transition:opacity .36s ease}
+.u12glass{position:absolute;inset:0;background:radial-gradient(90% 60% at 50% 38%,rgba(255,170,210,.22),rgba(16,10,28,.62) 70%);
+ -webkit-backdrop-filter:blur(22px) saturate(170%);backdrop-filter:blur(22px) saturate(170%)}
+.u12glow{position:absolute;left:50%;top:36%;width:0;height:0;pointer-events:none}
+.u12glow i{position:absolute;left:-210px;top:-210px;width:420px;height:420px;border-radius:50%;
+ background:radial-gradient(circle,rgba(255,236,200,.95) 0,rgba(243,211,154,.55) 18%,rgba(255,158,199,.28) 42%,transparent 68%);transform:scale(.2);opacity:0}
+.u12glow i:nth-child(2){background:conic-gradient(from 0deg,transparent 0 6%,rgba(255,230,190,.35) 8%,transparent 10% 22%,rgba(255,180,215,.3) 24%,transparent 26% 38%,rgba(255,230,190,.35) 40%,transparent 42% 54%,rgba(255,180,215,.3) 56%,transparent 58% 70%,rgba(255,230,190,.35) 72%,transparent 74% 86%,rgba(255,180,215,.3) 88%,transparent 90%);
+ -webkit-mask-image:radial-gradient(circle,#000 20%,transparent 68%);mask-image:radial-gradient(circle,#000 20%,transparent 68%)}
+.u12glow i:nth-child(3){left:-120px;top:-120px;width:240px;height:240px;background:radial-gradient(circle,rgba(255,255,255,.9),transparent 65%)}
+.u12on .u12glow i:nth-child(1){animation:u12burst 1.1s cubic-bezier(.16,1,.3,1) forwards}
+.u12on .u12glow i:nth-child(2){animation:u12burst 1.3s .05s cubic-bezier(.16,1,.3,1) forwards,u12spin 14s linear infinite}
+.u12on .u12glow i:nth-child(3){animation:u12flash .7s ease-out forwards}
+@keyframes u12burst{0%{transform:scale(.15);opacity:0}35%{opacity:1}100%{transform:scale(1);opacity:.85}}
+@keyframes u12spin{to{rotate:360deg}}
+@keyframes u12flash{0%{transform:scale(.3);opacity:0}25%{opacity:1}100%{transform:scale(2.2);opacity:0}}
+.u12fx{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.u12card{position:relative;width:min(100%,340px);padding:26px 22px 20px;border-radius:32px;text-align:center;
+ background:linear-gradient(160deg,rgba(255,255,255,.22),rgba(255,255,255,.07) 50%,rgba(255,190,220,.12));
+ -webkit-backdrop-filter:blur(30px) saturate(180%);backdrop-filter:blur(30px) saturate(180%);border:1px solid rgba(255,255,255,.3);
+ box-shadow:0 30px 90px rgba(0,0,0,.45),inset 0 1px 0 rgba(255,255,255,.5);margin-top:8vh;
+ transform:translateY(40px) scale(.92);opacity:0;transition:transform .7s cubic-bezier(.2,1.3,.3,1),opacity .35s ease}
+.u12on .u12card{transform:none;opacity:1}
+.u12off .u12card{transform:scale(.96);opacity:0;transition:transform .3s ease,opacity .3s ease}
+.u12eyebrow{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.32em;padding:6px 12px 6px 15px;border-radius:999px;color:#2a1a10;
+ background:linear-gradient(135deg,var(--g),#ffd9e8 70%,var(--pk));box-shadow:0 6px 18px rgba(255,158,199,.35)}
+.u12num{position:relative;height:132px;margin:8px 0 0;display:flex;align-items:center;justify-content:center}
+.u12to{font-family:"New York","Iowan Old Style","Didot","Bodoni 72",Georgia,serif;font-size:124px;line-height:1;font-weight:700;letter-spacing:-.04em;font-variant-numeric:lining-nums;
+ background:linear-gradient(180deg,#fff 10%,#ffe7c2 45%,var(--g) 65%,var(--pk));-webkit-background-clip:text;background-clip:text;color:transparent;
+ filter:drop-shadow(0 6px 22px rgba(255,170,210,.45))}
+.u12to.u12tick{animation:u12tick .26s cubic-bezier(.2,1.6,.4,1)}
+@keyframes u12tick{0%{transform:translateY(14px) scale(.9);opacity:.4}100%{transform:none;opacity:1}}
+.u12landed .u12to{animation:u12land .6s cubic-bezier(.2,1.6,.35,1)}
+@keyframes u12land{0%{transform:scale(1)}40%{transform:scale(1.12)}100%{transform:scale(1)}}
+.u12from{position:absolute;left:6%;top:34%;font-family:"New York",Georgia,serif;font-size:34px;color:rgba(255,255,255,.4)}
+.u12from::after{content:" →";font-size:22px;vertical-align:middle;color:rgba(255,190,220,.75)}
+.u12landed .u12from{opacity:.55}
+.u12from:empty{display:none}
+.u12sub{margin:2px 0 12px;font-size:17px;font-weight:600;letter-spacing:-.01em;color:rgba(255,255,255,.9)}
+.u12new{list-style:none;margin:0 0 16px;padding:0;display:grid;gap:8px;text-align:left}
+.u12new li{display:flex;gap:11px;align-items:flex-start;padding:10px 12px;border-radius:16px;background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.12);
+ opacity:0;transform:translateY(10px);animation:u12li .55s var(--d,500ms) cubic-bezier(.2,1.3,.3,1) forwards}
+@keyframes u12li{to{opacity:1;transform:none}}
+.u12new b{flex:0 0 26px;height:26px;border-radius:9px;display:grid;place-items:center;font-size:14px;color:#2a1a10;background:linear-gradient(135deg,var(--g),var(--pk))}
+.u12new span{display:flex;flex-direction:column;gap:2px;flex:1;min-width:0}
+.u12new strong{font-size:15px;font-weight:600;font-variant-numeric:tabular-nums}
+.u12new em{font-style:normal;font-size:12.5px;color:rgba(255,255,255,.62)}
+.u12bar{display:block;height:5px;border-radius:3px;background:rgba(255,255,255,.14);margin-top:5px;overflow:hidden}
+.u12bar i{display:block;height:100%;width:calc(var(--p)*100%);min-width:4px;border-radius:inherit;background:linear-gradient(90deg,var(--g),var(--pk))}
+.u12btn{appearance:none;border:0;width:100%;min-height:50px;border-radius:999px;font:inherit;font-size:17px;font-weight:600;color:#2a1a10;cursor:pointer;
+ background:linear-gradient(135deg,var(--g),#ffd9e8 60%,var(--pk));box-shadow:0 10px 26px rgba(255,158,199,.4),inset 0 1px 0 rgba(255,255,255,.7);transition:transform .2s cubic-bezier(.2,1.4,.4,1)}
+.u12btn:active{transform:scale(.96)}
+.u12btn:focus-visible{outline:2px solid #fff;outline-offset:3px}
+.u12tap{display:block;margin-top:10px;font-size:12px;color:rgba(255,255,255,.5)}
+.u12timer{position:absolute;left:24px;right:24px;bottom:8px;height:2px;border-radius:2px;background:linear-gradient(90deg,var(--g),var(--pk));transform-origin:left;opacity:.6}
+.u12on .u12timer{animation:u12timer 4s linear forwards}
+@keyframes u12timer{from{transform:scaleX(1)}to{transform:scaleX(0)}}
+.u12rm .u12glow,.u12rm .u12timer{display:none}
+.u12rm .u12card,.u12rm.u12moment{transition:opacity .2s ease!important;transform:none!important}
+.u12rm .u12new li{animation:none;opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.u12glow,.u12fx{display:none}.u12card{transition:opacity .2s ease!important;transform:none!important}.u12new li{animation:none!important;opacity:1!important;transform:none!important}.u12to{animation:none!important}}

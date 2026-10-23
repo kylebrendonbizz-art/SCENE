@@ -1,0 +1,32 @@
+/* uiux22 · scoped under html.u22 (set by uiux22.js; absent when SCENE_UIUX22_OFF) */
+/* 3 · HUD pills + XP track: dark glass, gold-pink accent, uiux19/20 type. Same box metrics (no padding/border change) so nothing shifts */
+html.u22 .topbar .hudrow>span{background:linear-gradient(170deg,rgba(40,32,58,.86),rgba(18,15,28,.92))!important;box-shadow:inset 0 1px 0 rgba(255,255,255,.16),inset 0 0 0 1px rgba(243,211,154,.4),0 0 16px rgba(255,158,199,.12),0 4px 14px rgba(0,0,0,.28)!important;color:#f3d39a!important;text-shadow:0 0 8px rgba(243,211,154,.45);font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",system-ui,sans-serif}
+html.u22 .topbar .hudrow>span>b{text-shadow:none;background:linear-gradient(100deg,#f3d39a 20%,#ff9ec7 90%);-webkit-background-clip:text;background-clip:text;color:transparent!important;font-weight:800;font-variant-numeric:tabular-nums}
+html.u22 .topbar .hudrow>span>em{color:rgba(255,231,244,.55)!important;letter-spacing:.09em}
+html.u22 .topbar .hudrow .gems{color:#ff9ec7!important}
+html.u22 .xptrack{background:rgba(255,255,255,.08)!important;box-shadow:inset 0 0 0 1px rgba(255,255,255,.06)}
+html.u22 .xptrack i{background:linear-gradient(90deg,#f3d39a,#ffe7f4 50%,#ff9ec7)!important;box-shadow:0 0 10px rgba(255,158,199,.45)!important}
+/* 4 · softer bulb (origin moved up by uiux22.js) */
+html.u22 .mo-flashbulb{background:radial-gradient(circle at var(--x) var(--y),#fff 0,rgba(255,255,255,.75) 6%,rgba(255,240,250,.2) 24%,transparent 48%)!important}
+/* 5 · count-up overlay over the game's live number */
+html.u22 .metric.u22counting{position:relative}
+html.u22 .metric.u22counting>[data-live-metric]{color:transparent!important}
+html.u22 .u22ct{position:absolute;font:inherit;font-weight:700;color:#ffe7f4;pointer-events:none;white-space:nowrap;font-variant-numeric:tabular-nums;text-shadow:0 0 8px rgba(255,158,199,.55)}
+/* 6 · both quick taps on a nav tab reach the click handler (no double-tap-zoom delay) */
+html.u22 .nav [data-tab]{touch-action:manipulation}
+/* 7 · level-up card (uiux12 markup, same trigger/data/close): dark glass, gold hairline, gold shimmer on the number */
+html.u22 .u12moment.u22lv .u12glass{background:radial-gradient(80% 55% at 50% 40%,rgba(243,211,154,.14),rgba(8,6,14,.82) 70%)}
+html.u22 .u12moment.u22lv .u12glow i:nth-child(1),html.u22 .u12moment.u22lv .u12glow i:nth-child(3){opacity:0!important;animation:none!important}
+html.u22 .u12moment.u22lv .u12glow{top:50%}
+html.u22 .u12moment.u22lv .u12card{margin-top:0;width:min(100%,320px);padding:22px 20px 18px;border-radius:26px;background:linear-gradient(170deg,rgba(40,32,58,.92),rgba(18,15,28,.96));border:1px solid rgba(243,211,154,.28);box-shadow:0 30px 80px rgba(0,0,0,.6),inset 0 1px 0 rgba(255,255,255,.12)}
+html.u22 .u12moment.u22lv .u12eyebrow{background:none;box-shadow:none;color:#f3d39a;padding:0;font-size:11px;letter-spacing:.34em}
+html.u22 .u12moment.u22lv .u12num{height:112px;margin-top:4px;overflow:hidden}
+html.u22 .u12moment.u22lv .u12to{font-size:108px;background:linear-gradient(100deg,#f3d39a 0,#fff3e2 35%,#f3d39a 45%,#ff9ec7 100%);background-size:220% 100%;filter:none;-webkit-background-clip:text;background-clip:text;animation:u22shine 2.4s .5s ease-in-out infinite}
+@keyframes u22shine{0%{background-position:100% 0}60%,100%{background-position:-20% 0}}
+html.u22 .u12moment.u22lv .u12from{display:none}
+html.u22 .u12moment.u22lv .u12sub{margin:0 0 4px;font-size:15px;color:rgba(255,255,255,.75)}
+html.u22 .u12moment.u22lv .u22tier{display:inline-block;margin:0 0 14px;padding:5px 11px;border-radius:999px;font-size:11px;font-weight:700;letter-spacing:.14em;color:#2a1a10;background:linear-gradient(100deg,#f3d39a,#ffe7f4 50%,#ff9ec7)}
+html.u22 .u12moment.u22lv .u12new li{background:rgba(255,255,255,.05);border-color:rgba(243,211,154,.14);padding:8px 10px}
+html.u22 .u12moment.u22lv .u12btn{min-height:46px;border-radius:16px;font-size:15px;font-weight:800;background:linear-gradient(100deg,#f3d39a,#ffe7f4 50%,#ff9ec7);box-shadow:0 8px 22px rgba(255,158,199,.3)}
+html.u22 .u12moment.u22lv .u12tap{display:none}
+html.u22 .u12moment.u22lv .u12timer{bottom:6px;opacity:.35}

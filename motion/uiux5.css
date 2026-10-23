@@ -1,0 +1,46 @@
+/* SCENE uiux5 · live pill + DM tapbacks (loaded by uiux5.js; not loaded when SCENE_UIUX5_OFF=true) */
+.u5-pill{--u5-top:calc(env(safe-area-inset-top,0px) + 6px);position:fixed;z-index:130;top:var(--u5-top);left:50%;transform:translateX(-50%);
+  width:120px;height:28px;border-radius:999px;background:#000;color:#f4f1eb;box-shadow:0 8px 28px rgba(0,0,0,.55),0 0 0 1px rgba(255,255,255,.06);
+  transition:width .42s cubic-bezier(.34,1.32,.64,1),height .42s cubic-bezier(.34,1.32,.64,1),opacity .25s ease,top .3s cubic-bezier(.16,.86,.24,1);
+  overflow:hidden;opacity:1;pointer-events:auto;font:600 13px/1.2 -apple-system,BlinkMacSystemFont,"SF Pro Text",Inter,system-ui,sans-serif}
+.u5-pill[data-state="hidden"]{width:84px;height:24px;opacity:0;pointer-events:none}
+.u5-pill[data-state="expanded"]{width:min(300px,calc(100vw - 110px));height:44px}
+.u5-pill-hit{all:unset;box-sizing:border-box;display:flex;align-items:center;gap:8px;width:100%;height:100%;padding:0 8px 0 6px;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.u5-lead{flex:0 0 auto;display:flex;align-items:center;justify-content:center}
+.u5-lead .avatar.u5-av{width:30px;height:30px;min-width:30px;font-size:10px;border-radius:50%;transition:width .35s,height .35s,min-width .35s}
+.u5-pill[data-state="compact"] .u5-lead .avatar.u5-av{width:20px;height:20px;min-width:20px;font-size:8px}
+.u5-ic{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:#1c1c22;font-size:14px}
+.u5-pill[data-state="compact"] .u5-ic{width:20px;height:20px;font-size:11px}
+.u5-txt{flex:1 1 auto;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;opacity:1;transition:opacity .2s ease .14s}
+.u5-txt b{font-weight:800}
+.u5-dim{color:rgba(244,241,235,.62);font-weight:600}
+.u5-pill:not([data-state="expanded"]) .u5-txt{opacity:0;transition-delay:0s}
+.u5-trail{flex:0 0 auto;display:flex;align-items:center}
+.u5-trail .u5-ic{background:transparent;width:auto;padding:0 4px}
+.u5-dots{display:inline-flex;gap:3px;padding:0 6px}
+.u5-dots i{width:5px;height:5px;border-radius:50%;background:#f4f1eb;opacity:.35;animation:u5dot 1.1s infinite ease-in-out}
+.u5-dots i:nth-child(2){animation-delay:.16s}.u5-dots i:nth-child(3){animation-delay:.32s}
+@keyframes u5dot{0%,60%,100%{opacity:.3;transform:translateY(0)}30%{opacity:1;transform:translateY(-3px)}}
+.u5-pill[data-kind="react"] .u5-trail .u5-ic,.u5-pill[data-kind="plan"] .u5-trail .u5-ic{font-size:16px}
+
+/* DM bubbles: tapback badges */
+#dmthread > .bubble.u5-b{position:relative;touch-action:manipulation}
+@media (hover:none){#dmthread > .bubble.u5-b{-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}}
+#dmthread > .bubble.u5-has{margin-top:16px}
+.u5-tb{position:absolute;top:-15px;display:flex;gap:2px;padding:3px 6px;border-radius:999px;background:#2a2a33;border:2px solid #09090d;font-style:normal;line-height:1;z-index:1;pointer-events:none}
+.bubble.them > .u5-tb{right:-10px}
+.bubble.me > .u5-tb{left:-10px}
+.u5-e{font-style:normal;font-size:14px}
+.u5-e-me{filter:drop-shadow(0 0 0 transparent)}
+.bubble.me > .u5-tb:has(.u5-e-them){background:#3a3a46}
+.bubble.u5-lift{transform:scale(1.03);transition:transform .18s cubic-bezier(.34,1.56,.64,1);box-shadow:0 10px 30px rgba(0,0,0,.5);z-index:2}
+.u5-burst{position:fixed;z-index:140;font-size:46px;pointer-events:none;font-style:normal;line-height:1}
+
+/* long-press reaction bar */
+.u5-scrim{position:fixed;inset:0;z-index:134;background:rgba(0,0,0,.18)}
+.u5-bar{position:fixed;z-index:135;display:flex;align-items:center;gap:2px;padding:5px 6px;border-radius:999px;background:#202028;border:1px solid rgba(255,255,255,.08);box-shadow:0 14px 38px rgba(0,0,0,.6)}
+.u5-bar button{all:unset;box-sizing:border-box;width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px;cursor:pointer;-webkit-tap-highlight-color:transparent;transition:transform .12s}
+.u5-bar button:active{transform:scale(1.25)}
+.u5-bar button.on{background:#3097f3}
+.u5-bar .u5-copy{width:auto;padding:0 12px;font:700 12px/1 -apple-system,system-ui,sans-serif;color:#f4f1eb;border-left:1px solid rgba(255,255,255,.1);border-radius:0 999px 999px 0}
+@media (prefers-reduced-motion:reduce){.u5-pill,.u5-txt,.u5-lead .avatar.u5-av{transition:none}.u5-dots i{animation:none;opacity:.8}}

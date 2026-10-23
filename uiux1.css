@@ -1,0 +1,5 @@
+/* SCENE uiux1 · hardening for double-tap-to-top on the bottom nav (app.js bind(): two taps on the
+   active tab < 430 ms -> sceneScrollTop()). touch-action:manipulation stops mobile browsers from
+   treating the second tap as a double-tap-zoom gesture, so both taps reach the click handler.
+   Chromium phone emulation passes without it; this is for real iOS Safari (not verifiable here). */
+.navbtn[data-tab]{touch-action:manipulation}

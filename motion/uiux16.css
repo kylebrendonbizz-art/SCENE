@@ -1,0 +1,86 @@
+/* uiux16 · Apple-glass glamour skin. Every rule is scoped under html.u16 (set by uiux16.js; kill switch SCENE_UIUX16_OFF).
+   Paint-only: colours, gradients, borders, shadows, radii, backdrop-filter. No display / position / size / overflow
+   changes on scroll containers, so layouts, tap targets and scroll positions are untouched. */
+html.u16{
+ --u16-gold:#f3d39a;--u16-pink:#ff9ec7;--u16-ink:#2a1a10;
+ --u16-r-card:22px;--u16-r-pill:999px;--u16-r-btn:16px;
+ --u16-fill:linear-gradient(160deg,rgba(255,255,255,.085),rgba(255,255,255,.035) 55%,rgba(255,170,215,.045));
+ --u16-fill-strong:linear-gradient(160deg,rgba(40,32,58,.62),rgba(22,18,34,.58));
+ --u16-edge:inset 0 1px 0 rgba(255,255,255,.16),inset 0 0 0 1px rgba(255,255,255,.07);
+ --u16-shadow:0 1px 2px rgba(0,0,0,.25),0 10px 30px rgba(0,0,0,.28);
+ --u16-blur:blur(24px) saturate(160%);--u16-blur-lite:blur(16px) saturate(150%);
+ --u16-sf:-apple-system,BlinkMacSystemFont,"SF Pro Text","SF Pro Display","Helvetica Neue",system-ui,sans-serif;
+}
+/* ---------- living background (one fixed layer, transform/opacity only → compositor, ~0 CPU) ---------- */
+#u16bg{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;background:#07060c}
+#u16bg i{position:absolute;width:90vmax;height:90vmax;border-radius:50%;opacity:.6;will-change:transform} /* no filter: the radial gradients are already soft; a blur filter here cost ~40fps in scroll tests */
+#u16bg i:nth-child(1){left:-30vmax;top:-30vmax;background:radial-gradient(circle,rgba(150,90,200,.55),transparent 62%);animation:u16a 46s ease-in-out infinite alternate}
+#u16bg i:nth-child(2){right:-35vmax;top:10vh;background:radial-gradient(circle,rgba(255,140,190,.38),transparent 62%);animation:u16b 58s ease-in-out infinite alternate}
+#u16bg i:nth-child(3){left:-10vmax;bottom:-45vmax;background:radial-gradient(circle,rgba(243,200,140,.30),transparent 62%);animation:u16c 64s ease-in-out infinite alternate}
+@keyframes u16a{to{transform:translate3d(18vmax,22vmax,0) scale(1.1)}}
+@keyframes u16b{to{transform:translate3d(-20vmax,18vmax,0) scale(.92)}}
+@keyframes u16c{to{transform:translate3d(16vmax,-14vmax,0) scale(1.08)}}
+html.u16-hidden #u16bg i{animation-play-state:paused}
+html.u16 body{font-family:var(--u16-sf)}
+html.u16 #app{position:relative;z-index:1}
+html.u16 .app{background:radial-gradient(circle at 50% -180px,rgba(120,90,160,.18),transparent 380px),rgba(9,8,14,.58)!important;border-color:rgba(255,255,255,.04)}
+
+/* ---------- chrome: top header + bottom tab bar ---------- */
+html.u16 .topbar{background:linear-gradient(180deg,rgba(18,14,28,.72),rgba(14,12,22,.56))!important;-webkit-backdrop-filter:var(--u16-blur);backdrop-filter:var(--u16-blur);box-shadow:inset 0 -1px 0 rgba(255,255,255,.07),0 8px 24px rgba(0,0,0,.18)}
+html.u16 .nav{background:linear-gradient(180deg,rgba(20,16,30,.62),rgba(12,10,20,.74))!important;-webkit-backdrop-filter:var(--u16-blur);backdrop-filter:var(--u16-blur);border-top:1px solid rgba(255,255,255,.10)!important;box-shadow:inset 0 1px 0 rgba(255,255,255,.08),0 -10px 30px rgba(0,0,0,.25)}
+html.u16 .topbar .iconbtn{background:linear-gradient(160deg,rgba(255,255,255,.12),rgba(255,255,255,.04))!important;box-shadow:var(--u16-edge);border-color:transparent!important}
+/* stat pills */
+html.u16 .topbar .energy,html.u16 .topbar .gems,html.u16 .topbar .hudfame{background:var(--u16-fill)!important;border:0!important;box-shadow:var(--u16-edge),0 4px 14px rgba(0,0,0,.18);border-radius:16px}
+html.u16 .levelbadge{color:var(--u16-gold)}
+html.u16 .xptrack i{background:linear-gradient(90deg,var(--u16-gold),var(--u16-pink))!important}
+html.u16 .feedday,html.u16 .scenedaybar,html.u16 .circletabs,html.u16 .youposttabs,html.u16 #uiux10 .u10-head{background:rgba(14,12,22,.42)!important;-webkit-backdrop-filter:var(--u16-blur-lite);backdrop-filter:var(--u16-blur-lite)}
+
+/* ---------- cards ---------- */
+/* long lists (feed posts, previews): translucent fill + highlight edge, NO backdrop blur (perf) */
+html.u16 article.post{background:var(--u16-fill)!important;border:0!important;border-radius:var(--u16-r-card);box-shadow:var(--u16-edge),var(--u16-shadow);margin:10px 10px 0}
+html.u16 .socialthreadpreview,html.u16 .commentpreview,html.u16 .quotedpost{background:rgba(255,255,255,.035)!important;border-color:rgba(255,255,255,.08)!important;border-radius:16px}
+/* single hero cards: real frosted glass */
+html.u16 .uiux2-today,html.u16 #uiux10 .u10-hero,html.u16 .u10-glass,html.u16 .fanpulse143,html.u16 .inboxlist,html.u16 .card,html.u16 .resource48,html.u16 .travelstatus{
+ background:var(--u16-fill-strong)!important;-webkit-backdrop-filter:var(--u16-blur);backdrop-filter:var(--u16-blur);border:0!important;border-radius:var(--u16-r-card)!important;box-shadow:var(--u16-edge),var(--u16-shadow)!important}
+html.u16 .city48,html.u16 .travelmode{background:var(--u16-fill)!important;border:0!important;box-shadow:var(--u16-edge);border-radius:18px}
+/* booking cards in a horizontal rail: lighter blur */
+html.u16 #uiux10 .u10-book.u10-glass{-webkit-backdrop-filter:var(--u16-blur-lite);backdrop-filter:var(--u16-blur-lite)}
+
+/* ---------- buttons ---------- */
+html.u16 .btn:not(.secondary),html.u16 #uiux10 .u10-cta,html.u16 .uiux2-go{
+ background-color:transparent!important;color:var(--u16-ink)!important;border:0!important;border-radius:var(--u16-r-btn)!important;
+ background-image:linear-gradient(110deg,transparent 38%,rgba(255,255,255,.6) 50%,transparent 62%),linear-gradient(135deg,var(--u16-gold),#ffd9e8 58%,var(--u16-pink))!important;
+ background-size:260% 100%,100% 100%!important;background-position:160% 0,0 0!important;background-repeat:no-repeat!important;
+ box-shadow:0 8px 22px rgba(255,150,200,.28),inset 0 1px 0 rgba(255,255,255,.75),inset 0 -1px 0 rgba(120,60,60,.18)!important;
+ transition:background-position .7s cubic-bezier(.2,.8,.2,1),transform .18s cubic-bezier(.2,1.4,.4,1),box-shadow .2s}
+html.u16 .btn:not(.secondary):active,html.u16 #uiux10 .u10-cta:active,html.u16 .uiux2-go:active{background-position:-60% 0,0 0!important;transform:scale(.97);transition:background-position .45s ease-out,transform .12s}
+html.u16 .btn.secondary,html.u16 .u10-take,html.u16 .u3chip,html.u16 .feedtab{background:var(--u16-fill)!important;border:0!important;box-shadow:var(--u16-edge);color:#f4f1f8}
+html.u16 .btn.secondary{border-radius:14px}
+
+/* ---------- DMs ---------- */
+html.u16 .chatpage{background:radial-gradient(120% 60% at 50% 0%,rgba(120,80,160,.22),transparent 60%),#0b0912!important}
+html.u16 .chatnav,html.u16 .chatcomposerwrap{background:linear-gradient(180deg,rgba(22,18,32,.70),rgba(14,12,22,.64))!important;-webkit-backdrop-filter:var(--u16-blur);backdrop-filter:var(--u16-blur);border-color:rgba(255,255,255,.08)!important}
+html.u16 .chatnav{box-shadow:inset 0 -1px 0 rgba(255,255,255,.08)}
+html.u16 .chatcomposerwrap{box-shadow:inset 0 1px 0 rgba(255,255,255,.10)}
+html.u16 .chatthread .bubble.them{background:linear-gradient(160deg,rgba(255,255,255,.12),rgba(255,255,255,.06))!important;box-shadow:inset 0 1px 0 rgba(255,255,255,.12)}
+html.u16 .chatthread .bubble.me{background:linear-gradient(160deg,#c13d7d,#b03a86 60%,#8a3aa6)!important;color:#fff;box-shadow:0 6px 16px rgba(200,70,150,.25),inset 0 1px 0 rgba(255,255,255,.28)}
+html.u16 #dmtext,html.u16 #commenttext{background:rgba(255,255,255,.07)!important;border:0!important;box-shadow:inset 0 1px 0 rgba(255,255,255,.10),inset 0 0 0 1px rgba(255,255,255,.08)}
+
+/* ---------- sheets + modals ---------- */
+html.u16 .overlay{background:rgba(6,4,12,.52)!important;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+html.u16 .sheet{background:linear-gradient(170deg,rgba(34,28,48,.86),rgba(18,15,28,.9))!important;-webkit-backdrop-filter:var(--u16-blur);backdrop-filter:var(--u16-blur);border:0!important;box-shadow:inset 0 1px 0 rgba(255,255,255,.16),inset 0 0 0 1px rgba(255,255,255,.06),0 -20px 60px rgba(0,0,0,.45)!important}
+html.u16 .sheethead,html.u16 .commentcomposer{background:rgba(26,22,38,.82)!important}
+html.u16 .outcomecard{background:var(--u16-fill-strong)!important;-webkit-backdrop-filter:var(--u16-blur);backdrop-filter:var(--u16-blur);border:0!important;box-shadow:var(--u16-edge),var(--u16-shadow)!important;border-radius:26px}
+
+/* ---------- fallback: no backdrop-filter → slightly more opaque fills keep text readable ---------- */
+@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){
+ html.u16 .topbar,html.u16 .nav,html.u16 .chatnav,html.u16 .chatcomposerwrap{background:rgba(14,12,22,.95)!important}
+ html.u16 .uiux2-today,html.u16 #uiux10 .u10-hero,html.u16 .u10-glass,html.u16 .fanpulse143,html.u16 .inboxlist,html.u16 .card,html.u16 .outcomecard,html.u16 .resource48,html.u16 .travelstatus{background:rgba(30,25,44,.96)!important}
+ html.u16 .sheet{background:rgb(24,20,34)!important}
+ html.u16 .overlay{background:rgba(6,4,12,.78)!important}
+}
+/* ---------- reduced motion ---------- */
+@media (prefers-reduced-motion:reduce){
+ #u16bg i{animation:none!important}
+ html.u16 .btn:not(.secondary),html.u16 #uiux10 .u10-cta,html.u16 .uiux2-go{transition:none!important}
+}

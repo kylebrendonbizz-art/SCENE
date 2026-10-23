@@ -1,0 +1,33 @@
+/* uiux32 · pins above tags, Cape Town beach print, Invite them, MAP tab only on the city screen, city polaroids. Scoped html.u32 */
+/* 1 · a pin only catches taps on its own tag / dot / faces; pins with celebs and the faces stack above every tag */
+html.u32 .u31m .u31stage .u25pin{pointer-events:none}
+html.u32 .u31m .u31stage .u25pin>*{pointer-events:auto}
+html.u32 .u31m .u31stage .u25pin.hot{z-index:6}
+html.u32 .u31m .u31stage .u25pin .u25avs{position:relative;z-index:8}
+/* nudge tags that sat on Hollywood's faces / on each other */
+html.u32 .u31m .u31stage .u25pin[data-d="silverlake"]{margin-top:-86px;margin-left:-4px}
+html.u32 .u31m .u31stage .u25pin[data-d="beverlyHills"]{margin-left:-34px;margin-top:8px}
+html.u32 .u31m .u31stage .u25pin[data-d="melrose"]{margin-left:8px}
+/* 2 · Cape Town: beach + mountain photo */
+html.u32 .u31photo[data-c="cpt"] .u31img{background-image:url("../resources/uiux32/cpt-beach.jpg");background-position:50% 55%}
+/* 3 · Invite them (Writer chip lines keep their text, kicker is neutral) */
+html.u32 .u25enc .u27c-invite[data-u32="1"]::before{content:none!important;display:none}
+html.u32 .u25enc .u27c-invite[data-writer="1"][data-u32="k"]::before{content:"Invite them"}
+/* 4 · gold MAP tab only on the Career / city screen */
+html.u32:not(.u32-city) .u31tab{display:none!important}
+/* 5 · polaroid stack under the map (map keeps its first-screen height, page scrolls down to the cities) */
+html.u32 .u25map.u32m{overflow-y:auto;-webkit-overflow-scrolling:touch}
+html.u32 .u25map.u32m>*{flex-shrink:0}
+html.u32 .u25map.u32m>.u25stage{flex:0 0 var(--u32h,420px);height:var(--u32h,420px)}
+.u32pol{display:flex;flex-direction:column;align-items:center;gap:22px;padding:18px 0 calc(40px + env(safe-area-inset-bottom));background:radial-gradient(120% 80% at 50% 0%,#1a0c18,#07060b)}
+.u32pol h3{margin:0;font:400 22px/1.2 "Pacifico","Dancing Script","Kaushan Script","Snell Roundhand","Brush Script MT",cursive;color:#ff4fb0;text-shadow:0 0 8px rgba(255,79,176,.7)}
+.u32p{position:relative;width:76%;max-width:300px;border:0;padding:12px 12px 46px;background:#fbf7ee;color:#2a1c22;transform:rotate(var(--u32r,0deg));box-shadow:0 14px 26px rgba(0,0,0,.55),0 2px 4px rgba(0,0,0,.4);cursor:pointer;-webkit-tap-highlight-color:transparent;clip-path:var(--u31-torn,none);transition:transform .15s}
+.u32p:active{transform:rotate(0deg) scale(.97)}
+.u32pimg{display:block;aspect-ratio:1/1;background:#222 center/cover no-repeat;filter:saturate(1.12) contrast(1.04)}
+.u32p[data-c="la"] .u32pimg{background-image:url("uiux31/la.jpg")}
+.u32p[data-c="nyc"] .u32pimg{background-image:url("uiux31/nyc.jpg")}
+.u32p[data-c="cpt"] .u32pimg{background-image:url("../resources/uiux32/cpt-beach.jpg")}
+.u32p[data-c="ldn"] .u32pimg{background-image:url("uiux31/ldn.jpg")}
+.u32p[data-c="par"] .u32pimg{background-image:url("uiux31/par.jpg")}
+.u32p b{position:absolute;left:0;right:0;bottom:9px;font:400 21px/1.2 "Kalam","Caveat","Dancing Script","Bradley Hand","Segoe Print","Marker Felt",cursive;color:#2a1c22;text-align:center}
+.u32ptape{position:absolute;top:-6px;left:50%;width:70px;height:20px;margin-left:-35px;background:rgba(245,232,200,.75);box-shadow:0 1px 3px rgba(0,0,0,.25);transform:rotate(-4deg)}

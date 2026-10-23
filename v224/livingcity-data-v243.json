@@ -1,0 +1,14 @@
+{
+ "v": 243,
+ "city": "Los Angeles",
+ "spots": [
+  {"id": "hollywood", "label": "Hollywood"},
+  {"id": "beverlyHills", "label": "Beverly Hills"},
+  {"id": "santaMonica", "label": "Santa Monica"}
+ ],
+ "celebs": ["kim", "britney", "kylie"],
+ "inCity": {"base": 0.35, "famePer": 0.0025, "fameMax": 0.25, "max": 2},
+ "pap": {"base": 0.2, "famePer": 0.00333, "fameMax": 0.35, "bumpBonus": 0.25, "perDay": 1, "outlets": ["popbase", "tmz", "enews"]},
+ "talk": {"one": 10, "two": 35},
+ "beatMs": 2200
+}

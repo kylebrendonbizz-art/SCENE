@@ -1,0 +1,28 @@
+/* SCENE uiux3 · DM reply chips (sits above the DM composer, overlays the thread's bottom edge;
+   uiux3.js pads the thread by the row height so the last message is never covered) */
+.chatcomposerwrap{position:relative}
+.u3chips{position:absolute;left:0;right:0;bottom:100%;z-index:2;display:flex;gap:8px;overflow-x:auto;overflow-y:hidden;
+  padding:10px 10px 8px;scrollbar-width:none;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain;
+  background:linear-gradient(180deg,rgba(9,9,13,0),rgba(9,9,13,.86) 38%,rgba(9,9,13,.97));
+  transition:opacity .22s ease,transform .26s cubic-bezier(.2,.8,.2,1);opacity:1;transform:none}
+.u3chips::-webkit-scrollbar{display:none}
+.u3chips[data-state=hidden]{opacity:0;transform:translateY(10px);pointer-events:none;visibility:hidden;transition:opacity .14s ease,transform .14s ease,visibility 0s linear .14s}
+.u3chips[data-state=entering]{opacity:0;transform:translateY(10px);transition:none}
+.u3chip{flex:0 0 auto;display:flex;align-items:stretch;min-height:44px;border-radius:999px;background:#15151d;border:1px solid #2e2b3d;
+  box-shadow:0 6px 18px rgba(0,0,0,.35),inset 0 1px 0 rgba(255,255,255,.035);overflow:hidden;
+  animation:u3in .3s cubic-bezier(.2,.8,.2,1) both;animation-delay:calc(var(--u3i,0)*45ms)}
+.u3chips[data-state=hidden] .u3chip,.u3chips[data-state=entering] .u3chip{animation:none}
+.u3send,.u3edit{border:0;background:none;color:#e9e5f0;font:inherit;min-height:44px;touch-action:manipulation;-webkit-tap-highlight-color:transparent;-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}
+.u3send{padding:0 6px 0 16px;font-size:14px;font-weight:600;letter-spacing:-.005em;white-space:nowrap;max-width:270px;overflow:hidden;text-overflow:ellipsis}
+.u3edit{width:40px;padding:0;font-size:14px;color:#8f8a9e;border-left:1px solid rgba(255,255,255,.06)}
+.u3chip:has(.u3send:active){background:#1e1c2a;border-color:rgba(169,134,255,.55)}
+.u3send:active{color:#fff}.u3edit:active{color:#cdb9ff;background:rgba(169,134,255,.08)}
+.u3send:focus-visible,.u3edit:focus-visible{outline:2px solid var(--accent,#a986ff);outline-offset:-2px;border-radius:999px}
+.u3send.u3long{color:#cdb9ff}
+.dmthread.chatthread{transition:padding-bottom .22s ease}
+@keyframes u3in{from{opacity:0;transform:translateY(8px) scale(.98)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){
+  .u3chips,.u3chips[data-state=hidden]{transform:none!important;transition:opacity .01s linear!important}
+  .u3chip{animation:none!important}
+  .dmthread.chatthread{transition:none}
+}
